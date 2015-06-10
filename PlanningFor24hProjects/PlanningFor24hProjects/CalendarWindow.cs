@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -13,12 +14,20 @@ namespace PlanningFor24hProjects
             InitializeComponent();
         }
 
-
+         
 
         private void CalendarWindow_Load(object sender, EventArgs e)
         {
 
-            for (int i = 0; i < 10;i++ )
+            Dictionary<string, string> groupBox1Text = new Dictionary<string, string>();
+
+            groupBox1Text.Add("PL", "Rodzaj zmiany");
+            groupBox1Text.Add("EN", "Shifts type");
+            groupBox1Text.Add("FR", "Type du shifte");
+
+            groupBox1.Text = groupBox1Text[Var.chosenLanguage];
+
+            for (int i = 0; i < 10;i++ ) //petla na zaludnienie kalendarza
             {
                 calendarItem = new ListViewItem("Imie i Nazwisko");
                 calendarItem.SubItems.Add("");

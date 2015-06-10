@@ -14,6 +14,14 @@ namespace PlanningFor24hProjects
     {
         public CalendarWindow calendarWindow = null;
 
+        Dictionary<string, string> openCalendarButtonText = null;
+        Dictionary<string, string> languageLabelText = null;
+        Dictionary<string, string> calendarModeLabelText = null;
+        Dictionary<string, string> workModeLabelText = null;
+        Dictionary<string, string> datePickerLabelText = null;
+        Dictionary<string, string> modifyEmplListButtonText = null;
+        Dictionary<string, string> baseWindowText = null;
+
 
         public BaseWindow()
         {
@@ -28,10 +36,66 @@ namespace PlanningFor24hProjects
 
         private void BaseWindow_Load(object sender, EventArgs e)
         {
-            //openCalendarButton.Text = openCalendarButtonText[chosenLanguage];
-            //nastepnie wstawie loadery dla pozostalych przyciskow/pol/labeli/nazwy/etc
+
+            
+            openCalendarButtonText = new Dictionary<string, string>();
+
+            openCalendarButtonText.Add("PL", "Wczytaj kalendarz");
+            openCalendarButtonText.Add("EN", "Load calendar");
+            openCalendarButtonText.Add("FR", "Ouvrir le calendrier");
+
+            openCalendarButton.Text = openCalendarButtonText[Var.chosenLanguage];
+
+            languageLabelText = new Dictionary<string, string>();
+
+            languageLabelText.Add("PL", "Język");
+            languageLabelText.Add("EN", "Language");
+            languageLabelText.Add("FR", "Longue");
+
+            languageLabel.Text = languageLabelText[Var.chosenLanguage];
+
+            calendarModeLabelText = new Dictionary<string, string>();
+
+            calendarModeLabelText.Add("PL", "Rodzaj kalendarza");
+            calendarModeLabelText.Add("EN", "Calendar mode");
+            calendarModeLabelText.Add("FR", "Mode du calendrier");
+
+            calendarModeLabel.Text = calendarModeLabelText[Var.chosenLanguage];
+
+            workModeLabelText = new Dictionary<string, string>();
+
+            workModeLabelText.Add("PL", "Tryb pracy");
+            workModeLabelText.Add("EN", "Work mode");
+            workModeLabelText.Add("FR", "Mode du travail");
+
+            workModeLabel.Text = workModeLabelText[Var.chosenLanguage];
+
+            datePickerLabelText = new Dictionary<string, string>();
+
+            datePickerLabelText.Add("PL", "Pierwszy miesiąc");
+            datePickerLabelText.Add("EN", "First month");
+            datePickerLabelText.Add("FR", "Premier mois"); //tutaj zrobic drugi dictionary jako alternatywny wybor zaleznie od zawartosci pola wyboru calendar mode
+
+            datePickerLabel.Text = datePickerLabelText[Var.chosenLanguage];
+
+            modifyEmplListButtonText = new Dictionary<string, string>();
+
+            modifyEmplListButtonText.Add("PL", "Zmodyfikuj listę pracowników");
+            modifyEmplListButtonText.Add("EN", "Modify employee list");
+            modifyEmplListButtonText.Add("FR", "Modifie la liste des employees");
+
+            modifyEmplListButton.Text = modifyEmplListButtonText[Var.chosenLanguage];
+
+            baseWindowText = new Dictionary<string, string>();
+
+            baseWindowText.Add("PL", "Ustawienia");
+            baseWindowText.Add("EN", "Settings");
+            baseWindowText.Add("FR", "Parametres");
+
+            this.Text = baseWindowText[Var.chosenLanguage];
         }
 
+        //fragment do modyfikacji 
         private void dateTimePicker1_DropDown(object sender, EventArgs e)
         {
 
@@ -44,6 +108,27 @@ namespace PlanningFor24hProjects
 
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         private static extern IntPtr SendMessage(IntPtr hWnd, int msg, IntPtr wp, IntPtr lp);
+
+
+        //ladowanie zmeinnej globalnej chosenLanguage wlasciwymi etykietami po wyborze z comboboxa
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedItem = languageChoiceComboBox.Text.ToString();
+            if (selectedItem == "Polski")
+                Var.chosenLanguage = "PL";
+            if (selectedItem == "Francais")
+                Var.chosenLanguage = "FR";
+            if (selectedItem == "English")
+                Var.chosenLanguage = "EN";
+
+            openCalendarButton.Text = openCalendarButtonText[Var.chosenLanguage];
+            languageLabel.Text = languageLabelText[Var.chosenLanguage];
+            calendarModeLabel.Text = calendarModeLabelText[Var.chosenLanguage];
+            workModeLabel.Text = workModeLabelText[Var.chosenLanguage];
+            datePickerLabel.Text = datePickerLabelText[Var.chosenLanguage];
+            modifyEmplListButton.Text = modifyEmplListButtonText[Var.chosenLanguage];
+            this.Text = baseWindowText[Var.chosenLanguage];
+        }
 
     }
 }

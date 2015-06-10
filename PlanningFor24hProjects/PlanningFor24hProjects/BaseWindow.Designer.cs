@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.openCalendarButton = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.languageChoiceComboBox = new System.Windows.Forms.ComboBox();
+            this.calendarModeComboBox = new System.Windows.Forms.ComboBox();
+            this.workModeComboBox = new System.Windows.Forms.ComboBox();
             this.modifyEmplListButton = new System.Windows.Forms.Button();
             this.languageLabel = new System.Windows.Forms.Label();
             this.calendarModeLabel = new System.Windows.Forms.Label();
@@ -50,41 +50,42 @@
             this.openCalendarButton.UseVisualStyleBackColor = true;
             this.openCalendarButton.Click += new System.EventHandler(this.openCalendarButton_Click);
             // 
-            // comboBox1
+            // languageChoiceComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.languageChoiceComboBox.FormattingEnabled = true;
+            this.languageChoiceComboBox.Items.AddRange(new object[] {
             "Polski",
             "Francais",
             "English"});
-            this.comboBox1.Location = new System.Drawing.Point(34, 50);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 1;
+            this.languageChoiceComboBox.Location = new System.Drawing.Point(34, 50);
+            this.languageChoiceComboBox.Name = "languageChoiceComboBox";
+            this.languageChoiceComboBox.Size = new System.Drawing.Size(121, 21);
+            this.languageChoiceComboBox.TabIndex = 1;
+            this.languageChoiceComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // comboBox4
+            // calendarModeComboBox
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
+            this.calendarModeComboBox.FormattingEnabled = true;
+            this.calendarModeComboBox.Items.AddRange(new object[] {
             "One month",
             "Trimester"});
-            this.comboBox4.Location = new System.Drawing.Point(34, 117);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 21);
-            this.comboBox4.TabIndex = 4;
+            this.calendarModeComboBox.Location = new System.Drawing.Point(34, 117);
+            this.calendarModeComboBox.Name = "calendarModeComboBox";
+            this.calendarModeComboBox.Size = new System.Drawing.Size(121, 21);
+            this.calendarModeComboBox.TabIndex = 4;
             // 
-            // comboBox5
+            // workModeComboBox
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
+            this.workModeComboBox.FormattingEnabled = true;
+            this.workModeComboBox.Items.AddRange(new object[] {
             "2/2",
             "3/3",
             "4/4",
             "Random"});
-            this.comboBox5.Location = new System.Drawing.Point(209, 50);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(121, 21);
-            this.comboBox5.TabIndex = 5;
+            this.workModeComboBox.Location = new System.Drawing.Point(209, 50);
+            this.workModeComboBox.Name = "workModeComboBox";
+            this.workModeComboBox.Size = new System.Drawing.Size(121, 21);
+            this.workModeComboBox.TabIndex = 5;
             // 
             // modifyEmplListButton
             // 
@@ -155,9 +156,9 @@
             this.Controls.Add(this.calendarModeLabel);
             this.Controls.Add(this.languageLabel);
             this.Controls.Add(this.modifyEmplListButton);
-            this.Controls.Add(this.comboBox5);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.workModeComboBox);
+            this.Controls.Add(this.calendarModeComboBox);
+            this.Controls.Add(this.languageChoiceComboBox);
             this.Controls.Add(this.openCalendarButton);
             this.Name = "BaseWindow";
             this.Text = "Settings window";
@@ -170,9 +171,9 @@
         #endregion
 
         private System.Windows.Forms.Button openCalendarButton;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ComboBox languageChoiceComboBox;
+        private System.Windows.Forms.ComboBox calendarModeComboBox;
+        private System.Windows.Forms.ComboBox workModeComboBox;
         private System.Windows.Forms.Button modifyEmplListButton;
         private System.Windows.Forms.Label languageLabel;
         private System.Windows.Forms.Label calendarModeLabel;

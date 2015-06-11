@@ -56,7 +56,13 @@
     <Compile Include="CalendarWindow.Designer.cs">
       <DependentUpon>CalendarWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Var.cs" />
+    <Compile Include="MonthChoiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MonthChoiceForm.Designer.cs">
+      <DependentUpon>MonthChoiceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Translation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="BaseWindow.resx">
@@ -64,6 +70,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CalendarWindow.resx">
       <DependentUpon>CalendarWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonthChoiceForm.resx">
+      <DependentUpon>MonthChoiceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

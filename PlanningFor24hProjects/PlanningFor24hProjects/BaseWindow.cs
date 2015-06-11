@@ -30,7 +30,7 @@ namespace PlanningFor24hProjects
 
         private void openCalendarButton_Click(object sender, EventArgs e)
         {
-            calendarWindow = new CalendarWindow();
+            calendarWindow = new CalendarWindow(2015, 7);
             calendarWindow.Visible = true;
         }
 
@@ -44,7 +44,7 @@ namespace PlanningFor24hProjects
             openCalendarButtonText.Add("EN", "Load calendar");
             openCalendarButtonText.Add("FR", "Ouvrir le calendrier");
 
-            openCalendarButton.Text = openCalendarButtonText[Var.chosenLanguage];
+            openCalendarButton.Text = openCalendarButtonText[Translation.chosenLanguage];
 
             languageLabelText = new Dictionary<string, string>();
 
@@ -52,7 +52,7 @@ namespace PlanningFor24hProjects
             languageLabelText.Add("EN", "Language");
             languageLabelText.Add("FR", "Longue");
 
-            languageLabel.Text = languageLabelText[Var.chosenLanguage];
+            languageLabel.Text = languageLabelText[Translation.chosenLanguage];
 
             calendarModeLabelText = new Dictionary<string, string>();
 
@@ -60,7 +60,7 @@ namespace PlanningFor24hProjects
             calendarModeLabelText.Add("EN", "Calendar mode");
             calendarModeLabelText.Add("FR", "Mode du calendrier");
 
-            calendarModeLabel.Text = calendarModeLabelText[Var.chosenLanguage];
+            calendarModeLabel.Text = calendarModeLabelText[Translation.chosenLanguage];
 
             workModeLabelText = new Dictionary<string, string>();
 
@@ -68,7 +68,7 @@ namespace PlanningFor24hProjects
             workModeLabelText.Add("EN", "Work mode");
             workModeLabelText.Add("FR", "Mode du travail");
 
-            workModeLabel.Text = workModeLabelText[Var.chosenLanguage];
+            workModeLabel.Text = workModeLabelText[Translation.chosenLanguage];
 
             datePickerLabelText = new Dictionary<string, string>();
 
@@ -76,7 +76,7 @@ namespace PlanningFor24hProjects
             datePickerLabelText.Add("EN", "First month");
             datePickerLabelText.Add("FR", "Premier mois"); //tutaj zrobic drugi dictionary jako alternatywny wybor zaleznie od zawartosci pola wyboru calendar mode
 
-            datePickerLabel.Text = datePickerLabelText[Var.chosenLanguage];
+            datePickerLabel.Text = datePickerLabelText[Translation.chosenLanguage];
 
             modifyEmplListButtonText = new Dictionary<string, string>();
 
@@ -84,7 +84,7 @@ namespace PlanningFor24hProjects
             modifyEmplListButtonText.Add("EN", "Modify employee list");
             modifyEmplListButtonText.Add("FR", "Modifie la liste des employees");
 
-            modifyEmplListButton.Text = modifyEmplListButtonText[Var.chosenLanguage];
+            modifyEmplListButton.Text = modifyEmplListButtonText[Translation.chosenLanguage];
 
             baseWindowText = new Dictionary<string, string>();
 
@@ -92,10 +92,10 @@ namespace PlanningFor24hProjects
             baseWindowText.Add("EN", "Settings");
             baseWindowText.Add("FR", "Parametres");
 
-            this.Text = baseWindowText[Var.chosenLanguage];
+            this.Text = baseWindowText[Translation.chosenLanguage];
         }
 
-        //fragment do modyfikacji 
+        //fragment do modyfikacji wyswietlania od razu miesiecy na kalendarzu
         private void dateTimePicker1_DropDown(object sender, EventArgs e)
         {
 
@@ -115,19 +115,24 @@ namespace PlanningFor24hProjects
         {
             string selectedItem = languageChoiceComboBox.Text.ToString();
             if (selectedItem == "Polski")
-                Var.chosenLanguage = "PL";
+                Translation.chosenLanguage = "PL";
             if (selectedItem == "Francais")
-                Var.chosenLanguage = "FR";
+                Translation.chosenLanguage = "FR";
             if (selectedItem == "English")
-                Var.chosenLanguage = "EN";
+                Translation.chosenLanguage = "EN";
 
-            openCalendarButton.Text = openCalendarButtonText[Var.chosenLanguage];
-            languageLabel.Text = languageLabelText[Var.chosenLanguage];
-            calendarModeLabel.Text = calendarModeLabelText[Var.chosenLanguage];
-            workModeLabel.Text = workModeLabelText[Var.chosenLanguage];
-            datePickerLabel.Text = datePickerLabelText[Var.chosenLanguage];
-            modifyEmplListButton.Text = modifyEmplListButtonText[Var.chosenLanguage];
-            this.Text = baseWindowText[Var.chosenLanguage];
+            openCalendarButton.Text = openCalendarButtonText[Translation.chosenLanguage];
+            languageLabel.Text = languageLabelText[Translation.chosenLanguage];
+            calendarModeLabel.Text = calendarModeLabelText[Translation.chosenLanguage];
+            workModeLabel.Text = workModeLabelText[Translation.chosenLanguage];
+            datePickerLabel.Text = datePickerLabelText[Translation.chosenLanguage];
+            modifyEmplListButton.Text = modifyEmplListButtonText[Translation.chosenLanguage];
+            this.Text = baseWindowText[Translation.chosenLanguage];
+
+            if (calendarWindow != null)
+            {
+                calendarWindow.updateTranslations();
+            }
         }
 
     }

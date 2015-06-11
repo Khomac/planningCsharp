@@ -28,18 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ColumnHeader columnHeader4;
-            System.Windows.Forms.ColumnHeader columnHeader5;
-            System.Windows.Forms.ColumnHeader columnHeader6;
-            System.Windows.Forms.ColumnHeader columnHeader7;
-            System.Windows.Forms.ColumnHeader columnHeader8;
-            System.Windows.Forms.ColumnHeader columnHeader9;
-            System.Windows.Forms.ColumnHeader columnHeader10;
             this.calendarField = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.monthAndYearLabel = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.listView2 = new System.Windows.Forms.ListView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.shiftTypeBox = new System.Windows.Forms.GroupBox();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
@@ -48,27 +42,14 @@
             this.createCalendarButton = new System.Windows.Forms.Button();
             this.exportCalendarButton = new System.Windows.Forms.Button();
             this.clearCalendarButton = new System.Windows.Forms.Button();
-            columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.groupBox1.SuspendLayout();
+            this.shiftTypeBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // calendarField
             // 
             this.calendarField.Alignment = System.Windows.Forms.ListViewAlignment.Left;
             this.calendarField.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            columnHeader4,
-            columnHeader5,
-            columnHeader6,
-            columnHeader7,
-            columnHeader8,
-            columnHeader9,
-            columnHeader10});
+            this.columnHeader1});
             this.calendarField.Cursor = System.Windows.Forms.Cursors.Hand;
             this.calendarField.GridLines = true;
             this.calendarField.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -83,6 +64,11 @@
             this.calendarField.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.calendarField_DrawSubItem);
             this.calendarField.MouseDown += new System.Windows.Forms.MouseEventHandler(this.calendarField_MouseDown);
             this.calendarField.MouseUp += new System.Windows.Forms.MouseEventHandler(this.calendarField_MouseUp);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Imię i Nazwisko";
+            this.columnHeader1.Width = 200;
             // 
             // monthAndYearLabel
             // 
@@ -109,19 +95,19 @@
             this.listView2.TabIndex = 3;
             this.listView2.UseCompatibleStateImageBehavior = false;
             // 
-            // groupBox1
+            // shiftTypeBox
             // 
-            this.groupBox1.Controls.Add(this.radioButton5);
-            this.groupBox1.Controls.Add(this.radioButton4);
-            this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Location = new System.Drawing.Point(19, 33);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(134, 173);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Rodzaj Zmiany";
+            this.shiftTypeBox.Controls.Add(this.radioButton5);
+            this.shiftTypeBox.Controls.Add(this.radioButton4);
+            this.shiftTypeBox.Controls.Add(this.radioButton3);
+            this.shiftTypeBox.Controls.Add(this.radioButton2);
+            this.shiftTypeBox.Controls.Add(this.radioButton1);
+            this.shiftTypeBox.Location = new System.Drawing.Point(19, 33);
+            this.shiftTypeBox.Name = "shiftTypeBox";
+            this.shiftTypeBox.Size = new System.Drawing.Size(134, 173);
+            this.shiftTypeBox.TabIndex = 4;
+            this.shiftTypeBox.TabStop = false;
+            this.shiftTypeBox.Text = "Rodzaj Zmiany";
             // 
             // radioButton5
             // 
@@ -201,6 +187,7 @@
             this.clearCalendarButton.TabIndex = 7;
             this.clearCalendarButton.Text = "Clear";
             this.clearCalendarButton.UseVisualStyleBackColor = true;
+            this.clearCalendarButton.Click += new System.EventHandler(this.clearCalendarButton_Click);
             // 
             // CalendarWindow
             // 
@@ -210,7 +197,7 @@
             this.Controls.Add(this.clearCalendarButton);
             this.Controls.Add(this.exportCalendarButton);
             this.Controls.Add(this.createCalendarButton);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.shiftTypeBox);
             this.Controls.Add(this.listView2);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.monthAndYearLabel);
@@ -218,8 +205,8 @@
             this.Name = "CalendarWindow";
             this.Text = "CalendarWindow";
             this.Load += new System.EventHandler(this.CalendarWindow_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.shiftTypeBox.ResumeLayout(false);
+            this.shiftTypeBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,7 +218,7 @@
         private System.Windows.Forms.Label monthAndYearLabel;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ListView listView2;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox shiftTypeBox;
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
@@ -240,6 +227,7 @@
         private System.Windows.Forms.Button createCalendarButton;
         private System.Windows.Forms.Button exportCalendarButton;
         private System.Windows.Forms.Button clearCalendarButton;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
 
     }
 }

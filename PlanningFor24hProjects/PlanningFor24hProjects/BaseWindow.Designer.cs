@@ -38,7 +38,6 @@
             this.workModeLabel = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.datePickerLabel = new System.Windows.Forms.Label();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.SuspendLayout();
             // 
             // openCalendarButton
@@ -62,6 +61,7 @@
             this.languageChoiceComboBox.Name = "languageChoiceComboBox";
             this.languageChoiceComboBox.Size = new System.Drawing.Size(121, 21);
             this.languageChoiceComboBox.TabIndex = 1;
+            this.languageChoiceComboBox.Text = "English";
             this.languageChoiceComboBox.SelectedIndexChanged += new System.EventHandler(this.languageChoiceCombobox_SelectedIndexChanged);
             // 
             // calendarModeComboBox
@@ -145,20 +145,12 @@
             this.datePickerLabel.TabIndex = 13;
             this.datePickerLabel.Text = "First month";
             // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(231, 141);
-            this.monthCalendar1.MaxSelectionCount = 3;
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 14;
-            // 
             // BaseWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CausesValidation = false;
-            this.ClientSize = new System.Drawing.Size(567, 335);
-            this.Controls.Add(this.monthCalendar1);
+            this.ClientSize = new System.Drawing.Size(505, 151);
             this.Controls.Add(this.datePickerLabel);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.workModeLabel);
@@ -189,7 +181,6 @@
         private System.Windows.Forms.Label workModeLabel;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label datePickerLabel;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
     }
 }
 

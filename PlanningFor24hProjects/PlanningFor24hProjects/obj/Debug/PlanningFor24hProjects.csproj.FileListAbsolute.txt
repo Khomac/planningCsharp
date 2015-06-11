@@ -18,3 +18,4 @@ C:\Users\JK\Desktop\planningCsharp\PlanningFor24hProjects\PlanningFor24hProjects
 C:\Users\JK\Desktop\planningCsharp\PlanningFor24hProjects\PlanningFor24hProjects\obj\Debug\PlanningFor24hProjects.CalendarWindow.resources
 C:\Users\JK\Desktop\planningCsharp\PlanningFor24hProjects\PlanningFor24hProjects\obj\Debug\PlanningFor24hProjects.Properties.Resources.resources
 C:\Users\JK\Desktop\planningCsharp\PlanningFor24hProjects\PlanningFor24hProjects\obj\Debug\PlanningFor24hProjects.csproj.GenerateResource.Cache
+C:\Users\Komac\Desktop\planningC#\PlanningFor24hProjects\PlanningFor24hProjects\obj\Debug\PlanningFor24hProjects.MonthChoiceForm.resources

@@ -8,37 +8,49 @@ namespace PlanningFor24hProjects
     public partial class CalendarWindow : Form
     {
         ListViewItem calendarItem = null;
+        
+        
+
         private bool listViewMouseDown = true;
-        public CalendarWindow()
+        private int year, month = 0;
+
+        public CalendarWindow(int year, int month)
         {
+            this.year = year;
+            this.month = month;            
             InitializeComponent();
         }
 
-         
+        public void updateTranslations()
+        {
+            shiftTypeBox.Text = Translation.shiftType();
+            calendarField.Columns[0].Text = Translation.nameAndSurname();
+            for (int i = 1; i < calendarField.Columns.Count; i++)
+            {
+                int dayOfWeek = (int)(new DateTime(year, month, i).DayOfWeek); //DayOfWeek zwraca enuma, trzeba ręcznie zrzutować na inta
+                calendarField.Columns[i].Text = i.ToString() + "\n" + Translation.dayOfWeek(dayOfWeek);
+            }
+        }
 
         private void CalendarWindow_Load(object sender, EventArgs e)
         {
-
-            Dictionary<string, string> groupBox1Text = new Dictionary<string, string>();
-
-            groupBox1Text.Add("PL", "Rodzaj zmiany");
-            groupBox1Text.Add("EN", "Shifts type");
-            groupBox1Text.Add("FR", "Type du shifte");
-
-            groupBox1.Text = groupBox1Text[Var.chosenLanguage];
+            for (int j = 1; j <= DateTime.DaysInMonth(year, month); j++)
+            {
+                calendarField.Columns.Add("");
+                calendarField.Columns[j].Width = 30;
+            }
 
             for (int i = 0; i < 10;i++ ) //petla na zaludnienie kalendarza
             {
                 calendarItem = new ListViewItem("Imie i Nazwisko");
-                calendarItem.SubItems.Add("");
-                calendarItem.SubItems.Add("U");
-                calendarItem.SubItems.Add("D");
-                calendarItem.SubItems.Add("g");
-                calendarItem.SubItems.Add("");
+                for (int j = 0; j < DateTime.DaysInMonth(year, month); j++)
+                {
+                    calendarItem.SubItems.Add("");
+                }
                 calendarField.Items.Add(calendarItem);
             }
-            
 
+            updateTranslations();
         }
 
         private void calendarField_DrawSubItem(object sender, DrawListViewSubItemEventArgs e)
@@ -58,8 +70,14 @@ namespace PlanningFor24hProjects
                 if (e.SubItem.Text == "L4")
                     e.Graphics.FillRectangle(Brushes.DarkCyan, e.Bounds);
                 if (e.SubItem.Text == "")
-                    e.Graphics.FillRectangle(Brushes.WhiteSmoke, e.Bounds);
-                //tutaj malujemy pola kolorami
+                { 
+                    if (new DateTime(year, month, e.ColumnIndex).DayOfWeek == DayOfWeek.Saturday ||
+                        new DateTime(year, month, e.ColumnIndex).DayOfWeek == DayOfWeek.Sunday)
+                        e.Graphics.FillRectangle(Brushes.Pink, e.Bounds);
+                    else
+                        e.Graphics.FillRectangle(Brushes.WhiteSmoke, e.Bounds);
+                }
+                //tutaj malujemy pola kolorami - odpowiednio 
 
                 e.Graphics.DrawString(e.SubItem.Text, SystemFonts.DefaultFont, Brushes.Black, new PointF(e.Bounds.Left + 2, e.Bounds.Top + 2));
             }
@@ -102,8 +120,31 @@ namespace PlanningFor24hProjects
         //tutaj pisanie haederow
         private void CalendarField_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
         {
-            e.Graphics.DrawString(e.Header.Text, SystemFonts.DefaultFont, Brushes.Black, new PointF(e.Bounds.Left + 2, e.Bounds.Top + 2));
+            if (e.ColumnIndex > 0)
+            {
+                if (new DateTime(year, month, e.ColumnIndex).DayOfWeek == DayOfWeek.Saturday || 
+                    new DateTime(year, month, e.ColumnIndex).DayOfWeek == DayOfWeek.Sunday)
+                    e.Graphics.FillRectangle(Brushes.Pink, e.Bounds);
+            }
+            if (e.ColumnIndex == 0)
+                e.Graphics.DrawString(e.Header.Text, SystemFonts.DefaultFont, Brushes.Black, new PointF(e.Bounds.Left + 2, e.Bounds.Top + 2));
+            else
+                e.Graphics.DrawString(e.Header.Text, new Font(new FontFamily("Calibri"),7,FontStyle.Regular), Brushes.Black, new PointF(e.Bounds.Left + 2, e.Bounds.Top + 2));
+            e.Graphics.DrawLine(new Pen(Color.Black,2), e.Bounds.Left, e.Bounds.Bottom, e.Bounds.Right, e.Bounds.Bottom);
         }
+
+        private void clearCalendarButton_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem item in calendarField.Items)
+            {
+                for (int i = 1; i < item.SubItems.Count;i++ )
+                {
+
+                    item.SubItems[i].Text = "";
+                }
+            }
+        }
+
 
 
 

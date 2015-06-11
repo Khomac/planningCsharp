@@ -14,13 +14,13 @@ namespace PlanningFor24hProjects
     {
         public CalendarWindow calendarWindow = null;
 
-        Dictionary<string, string> openCalendarButtonText = null;
-        Dictionary<string, string> languageLabelText = null;
-        Dictionary<string, string> calendarModeLabelText = null;
-        Dictionary<string, string> workModeLabelText = null;
-        Dictionary<string, string> datePickerLabelText = null;
-        Dictionary<string, string> modifyEmplListButtonText = null;
-        Dictionary<string, string> baseWindowText = null;
+        public Dictionary<string, string> openCalendarButtonText = null;
+        public Dictionary<string, string> languageLabelText = null;
+        public Dictionary<string, string> calendarModeLabelText = null;
+        public Dictionary<string, string> workModeLabelText = null;
+        public Dictionary<string, string> datePickerLabelText = null;
+        public Dictionary<string, string> modifyEmplListButtonText = null;
+        public Dictionary<string, string> baseWindowText = null;
 
 
         public BaseWindow()
@@ -36,7 +36,7 @@ namespace PlanningFor24hProjects
 
         private void BaseWindow_Load(object sender, EventArgs e)
         {
-
+            //languageChoiceComboBox.SelectedIndex = 2; //i to nie dziala, kiedy sie ustawi - nie wiedziec czemu
             
             openCalendarButtonText = new Dictionary<string, string>();
 
@@ -111,7 +111,7 @@ namespace PlanningFor24hProjects
 
 
         //ladowanie zmeinnej globalnej chosenLanguage wlasciwymi etykietami po wyborze z comboboxa
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void languageChoiceCombobox_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedItem = languageChoiceComboBox.Text.ToString();
             if (selectedItem == "Polski")

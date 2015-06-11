@@ -8,6 +8,6 @@ namespace PlanningFor24hProjects
 {
     class Var
     {
-        public static string chosenLanguage;
+        public static string chosenLanguage = "EN";
     }
 }

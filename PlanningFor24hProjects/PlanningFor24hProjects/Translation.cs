@@ -276,5 +276,33 @@ namespace PlanningFor24hProjects
                 return calendarWindowText[chosenLanguage];
             }
 
+//slownik dla monthChoiceWindow
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            static Dictionary<string, string[]> monthNameTable = new Dictionary<string, string[]>()
+            {
+                {"PL", new string[] {"Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień"}},
+                {"EN", new string[] {"January", "February", "Mars", "April", "May", "June", "July", "August", "September", "October", "November", "December"}},
+                {"FR", new string[] {"Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Decembre"}},
+            };
+
+            public static string monthName(int month)
+            {
+                return monthNameTable[chosenLanguage][month];
+            }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            static Dictionary<string, string> monthChoiceFormText = new Dictionary<string, string>()
+            {
+                {"PL", "Okno wyboru daty"},
+                {"EN", "Date choice window"},
+                {"FR", "Le fenetre du choix de la date"}
+            };
+
+            public static string monthChoiceForm()
+            {
+                return monthChoiceFormText[chosenLanguage];
+            }
+
+
     }
 }

@@ -13,7 +13,11 @@ namespace PlanningFor24hProjects
     public partial class BaseWindow : Form
     {
         public CalendarWindow calendarWindow = null;
+        public MonthChoiceForm monthChoiceWindow = null;
 
+        public static string chosenDateText;
+        public static int chosenMonth = 0;
+        public static int chosenYear = 0;
 
         public BaseWindow()
         {
@@ -26,14 +30,14 @@ namespace PlanningFor24hProjects
             languageLabel.Text = Translation.languageLabel();
             calendarModeLabel.Text = Translation.calendarModeLabel();
             workModeLabel.Text = Translation.workModeLabel();
-            datePickerLabel.Text = Translation.datePickerLabel();
+            chosenDateLabel.Text = Translation.datePickerLabel();
             modifyEmplListButton.Text = Translation.modifyEmplListButton();
             this.Text = Translation.baseWindow();
         }
 
         private void openCalendarButton_Click(object sender, EventArgs e)
         {
-            calendarWindow = new CalendarWindow(2015, 7); //zmodyfikowac na wartosci wybrane z kalendarza
+            calendarWindow = new CalendarWindow(chosenYear, chosenMonth); //zmodyfikowac na wartosci wybrane z kalendarza
             calendarWindow.Visible = true;
         }
 
@@ -58,7 +62,21 @@ namespace PlanningFor24hProjects
             this.updateTranslations();
             if (calendarWindow != null)
                 calendarWindow.updateTranslations();
+            if (monthChoiceWindow != null)
+                monthChoiceWindow.updateTranslations();
+
         }
+
+        private void dateChoiceButton_Click(object sender, EventArgs e)
+        {
+            //if (monthChoiceWindow==null) //opracowac lepszy sprawdzacz czy otwarta jest tylko jedna forma naraz
+            {
+                monthChoiceWindow = new MonthChoiceForm();
+                monthChoiceWindow.Visible = true;
+            }
+        }
+
+
 
     }
 }

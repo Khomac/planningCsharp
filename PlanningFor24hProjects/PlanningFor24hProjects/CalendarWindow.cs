@@ -62,6 +62,7 @@ namespace PlanningFor24hProjects
             }
 
             updateTranslations();
+            this.monthAndYearLabel.Text = BaseWindow.chosenDateText;
         }
 
         private void calendarField_DrawSubItem(object sender, DrawListViewSubItemEventArgs e)

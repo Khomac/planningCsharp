@@ -36,7 +36,7 @@
             this.languageLabel = new System.Windows.Forms.Label();
             this.calendarModeLabel = new System.Windows.Forms.Label();
             this.workModeLabel = new System.Windows.Forms.Label();
-            this.datePickerLabel = new System.Windows.Forms.Label();
+            this.chosenDateLabel = new System.Windows.Forms.Label();
             this.dateChoiceButton = new System.Windows.Forms.Button();
             this.chosenDateTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
@@ -125,14 +125,14 @@
             this.workModeLabel.TabIndex = 11;
             this.workModeLabel.Text = "Work mode";
             // 
-            // datePickerLabel
+            // chosenDateLabel
             // 
-            this.datePickerLabel.AutoSize = true;
-            this.datePickerLabel.Location = new System.Drawing.Point(260, 101);
-            this.datePickerLabel.Name = "datePickerLabel";
-            this.datePickerLabel.Size = new System.Drawing.Size(58, 13);
-            this.datePickerLabel.TabIndex = 13;
-            this.datePickerLabel.Text = "First month";
+            this.chosenDateLabel.AutoSize = true;
+            this.chosenDateLabel.Location = new System.Drawing.Point(260, 101);
+            this.chosenDateLabel.Name = "chosenDateLabel";
+            this.chosenDateLabel.Size = new System.Drawing.Size(58, 13);
+            this.chosenDateLabel.TabIndex = 13;
+            this.chosenDateLabel.Text = "First month";
             // 
             // dateChoiceButton
             // 
@@ -142,6 +142,7 @@
             this.dateChoiceButton.TabIndex = 14;
             this.dateChoiceButton.Text = "Date choice";
             this.dateChoiceButton.UseVisualStyleBackColor = true;
+            this.dateChoiceButton.Click += new System.EventHandler(this.dateChoiceButton_Click);
             // 
             // chosenDateTextBox
             // 
@@ -159,7 +160,7 @@
             this.ClientSize = new System.Drawing.Size(505, 224);
             this.Controls.Add(this.chosenDateTextBox);
             this.Controls.Add(this.dateChoiceButton);
-            this.Controls.Add(this.datePickerLabel);
+            this.Controls.Add(this.chosenDateLabel);
             this.Controls.Add(this.workModeLabel);
             this.Controls.Add(this.calendarModeLabel);
             this.Controls.Add(this.languageLabel);
@@ -185,7 +186,7 @@
         private System.Windows.Forms.Label languageLabel;
         private System.Windows.Forms.Label calendarModeLabel;
         private System.Windows.Forms.Label workModeLabel;
-        private System.Windows.Forms.Label datePickerLabel;
+        private System.Windows.Forms.Label chosenDateLabel;
         private System.Windows.Forms.Button dateChoiceButton;
         private System.Windows.Forms.TextBox chosenDateTextBox;
     }

@@ -36,13 +36,14 @@
             this.languageLabel = new System.Windows.Forms.Label();
             this.calendarModeLabel = new System.Windows.Forms.Label();
             this.workModeLabel = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.datePickerLabel = new System.Windows.Forms.Label();
+            this.dateChoiceButton = new System.Windows.Forms.Button();
+            this.chosenDateTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // openCalendarButton
             // 
-            this.openCalendarButton.Location = new System.Drawing.Point(383, 101);
+            this.openCalendarButton.Location = new System.Drawing.Point(356, 160);
             this.openCalendarButton.Name = "openCalendarButton";
             this.openCalendarButton.Size = new System.Drawing.Size(108, 37);
             this.openCalendarButton.TabIndex = 0;
@@ -83,14 +84,14 @@
             "3/3",
             "4/4",
             "Random"});
-            this.workModeComboBox.Location = new System.Drawing.Point(209, 50);
+            this.workModeComboBox.Location = new System.Drawing.Point(34, 176);
             this.workModeComboBox.Name = "workModeComboBox";
             this.workModeComboBox.Size = new System.Drawing.Size(121, 21);
             this.workModeComboBox.TabIndex = 5;
             // 
             // modifyEmplListButton
             // 
-            this.modifyEmplListButton.Location = new System.Drawing.Point(383, 34);
+            this.modifyEmplListButton.Location = new System.Drawing.Point(194, 160);
             this.modifyEmplListButton.Name = "modifyEmplListButton";
             this.modifyEmplListButton.Size = new System.Drawing.Size(108, 37);
             this.modifyEmplListButton.TabIndex = 6;
@@ -118,41 +119,47 @@
             // workModeLabel
             // 
             this.workModeLabel.AutoSize = true;
-            this.workModeLabel.Location = new System.Drawing.Point(206, 34);
+            this.workModeLabel.Location = new System.Drawing.Point(31, 160);
             this.workModeLabel.Name = "workModeLabel";
             this.workModeLabel.Size = new System.Drawing.Size(62, 13);
             this.workModeLabel.TabIndex = 11;
             this.workModeLabel.Text = "Work mode";
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CustomFormat = "MM/yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(209, 114);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(121, 20);
-            this.dateTimePicker1.TabIndex = 12;
-            this.dateTimePicker1.TabStop = false;
-            this.dateTimePicker1.Value = new System.DateTime(2015, 6, 1, 0, 0, 0, 0);
-            this.dateTimePicker1.DropDown += new System.EventHandler(this.dateTimePicker1_DropDown);
-            // 
             // datePickerLabel
             // 
             this.datePickerLabel.AutoSize = true;
-            this.datePickerLabel.Location = new System.Drawing.Point(206, 98);
+            this.datePickerLabel.Location = new System.Drawing.Point(260, 101);
             this.datePickerLabel.Name = "datePickerLabel";
             this.datePickerLabel.Size = new System.Drawing.Size(58, 13);
             this.datePickerLabel.TabIndex = 13;
             this.datePickerLabel.Text = "First month";
+            // 
+            // dateChoiceButton
+            // 
+            this.dateChoiceButton.Location = new System.Drawing.Point(263, 34);
+            this.dateChoiceButton.Name = "dateChoiceButton";
+            this.dateChoiceButton.Size = new System.Drawing.Size(124, 39);
+            this.dateChoiceButton.TabIndex = 14;
+            this.dateChoiceButton.Text = "Date choice";
+            this.dateChoiceButton.UseVisualStyleBackColor = true;
+            // 
+            // chosenDateTextBox
+            // 
+            this.chosenDateTextBox.Location = new System.Drawing.Point(263, 118);
+            this.chosenDateTextBox.Name = "chosenDateTextBox";
+            this.chosenDateTextBox.ReadOnly = true;
+            this.chosenDateTextBox.Size = new System.Drawing.Size(124, 20);
+            this.chosenDateTextBox.TabIndex = 15;
             // 
             // BaseWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CausesValidation = false;
-            this.ClientSize = new System.Drawing.Size(505, 151);
+            this.ClientSize = new System.Drawing.Size(505, 224);
+            this.Controls.Add(this.chosenDateTextBox);
+            this.Controls.Add(this.dateChoiceButton);
             this.Controls.Add(this.datePickerLabel);
-            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.workModeLabel);
             this.Controls.Add(this.calendarModeLabel);
             this.Controls.Add(this.languageLabel);
@@ -163,7 +170,6 @@
             this.Controls.Add(this.openCalendarButton);
             this.Name = "BaseWindow";
             this.Text = "Settings window";
-            this.Load += new System.EventHandler(this.BaseWindow_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,8 +185,9 @@
         private System.Windows.Forms.Label languageLabel;
         private System.Windows.Forms.Label calendarModeLabel;
         private System.Windows.Forms.Label workModeLabel;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label datePickerLabel;
+        private System.Windows.Forms.Button dateChoiceButton;
+        private System.Windows.Forms.TextBox chosenDateTextBox;
     }
 }
 

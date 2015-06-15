@@ -24,6 +24,17 @@ namespace PlanningFor24hProjects
         public void updateTranslations()
         {
             shiftTypeBox.Text = Translation.shiftType();
+            nightRadioButton.Text = Translation.nightRadioButton();
+            //monthAndYearLabel.Text = Translation.mon - to nie translation, tylko ma sie wypelniac zgodnie z wyborem mieisaca i roku
+            dayRadioButton.Text = Translation.dayRadioButton();
+            holidayRadioButton.Text = Translation.holidayRadioButton();
+            sicknessRadioButton.Text = Translation.sicknessRadioButton();
+            emptyRadioButton.Text = Translation.emptyRadioButton();
+            clearCalendarButton.Text = Translation.clearCalendarButton();
+            hoursNumberLabel.Text = Translation.hoursNumberLabel();
+            createCalendarButton.Text = Translation.createCalendarButton();
+            this.Text = Translation.calendarWindow();
+
             calendarField.Columns[0].Text = Translation.nameAndSurname();
             for (int i = 1; i < calendarField.Columns.Count; i++)
             {
@@ -37,7 +48,7 @@ namespace PlanningFor24hProjects
             for (int j = 1; j <= DateTime.DaysInMonth(year, month); j++)
             {
                 calendarField.Columns.Add("");
-                calendarField.Columns[j].Width = 30;
+                calendarField.Columns[j].Width = 23;
             }
 
             for (int i = 0; i < 10;i++ ) //petla na zaludnienie kalendarza
@@ -95,15 +106,15 @@ namespace PlanningFor24hProjects
                     var col = info.Item.SubItems.IndexOf(info.SubItem);
                     if (col > 0)
                     {
-                        if (radioButton1.Checked)
+                        if (dayRadioButton.Checked)
                             info.Item.SubItems[col].Text = "D";
-                        if (radioButton2.Checked)
+                        if (nightRadioButton.Checked)
                             info.Item.SubItems[col].Text = "N";
-                        if (radioButton3.Checked)
+                        if (holidayRadioButton.Checked)
                             info.Item.SubItems[col].Text = "U";
-                        if (radioButton4.Checked)
+                        if (sicknessRadioButton.Checked)
                             info.Item.SubItems[col].Text = "L4";
-                        if (radioButton5.Checked)
+                        if (emptyRadioButton.Checked)
                             info.Item.SubItems[col].Text = "";
 
                     }

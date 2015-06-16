@@ -10,16 +10,17 @@ using System.Windows.Forms;
 
 namespace PlanningFor24hProjects
 {
-    public partial class BaseWindow : Form
+    public partial class BaseForm : Form
     {
-        public CalendarWindow calendarWindow = null;
+        public CalendarForm calendarWindow = null;
         public MonthChoiceForm monthChoiceWindow = null;
+        public emplListForm emplListWindow = null;
 
         public static string chosenDateText;
         public static int chosenMonth = 0;
         public static int chosenYear = 0;
 
-        public BaseWindow()
+        public BaseForm()
         {
             InitializeComponent();
         }
@@ -37,7 +38,7 @@ namespace PlanningFor24hProjects
 
         private void openCalendarButton_Click(object sender, EventArgs e)
         {
-            calendarWindow = new CalendarWindow(chosenYear, chosenMonth); //zmodyfikowac na wartosci wybrane z kalendarza
+            calendarWindow = new CalendarForm(chosenYear, chosenMonth); // wartosci wybrane z kalendarza
             calendarWindow.Visible = true;
         }
 
@@ -64,6 +65,8 @@ namespace PlanningFor24hProjects
                 calendarWindow.updateTranslations();
             if (monthChoiceWindow != null)
                 monthChoiceWindow.updateTranslations();
+            if (emplListWindow != null)
+                emplListWindow.updateTranslations();
 
         }
 
@@ -74,6 +77,12 @@ namespace PlanningFor24hProjects
                 monthChoiceWindow = new MonthChoiceForm();
                 monthChoiceWindow.Visible = true;
             }
+        }
+
+        private void modifyEmplListButton_Click(object sender, EventArgs e)
+        {
+            emplListWindow = new emplListForm();
+            emplListWindow.Visible = true;
         }
 
 

@@ -1,6 +1,6 @@
 ﻿namespace PlanningFor24hProjects
 {
-    partial class BaseWindow
+    partial class BaseForm
     {
         /// <summary>
         /// Required designer variable.
@@ -43,9 +43,9 @@
             // 
             // openCalendarButton
             // 
-            this.openCalendarButton.Location = new System.Drawing.Point(356, 160);
+            this.openCalendarButton.Location = new System.Drawing.Point(325, 85);
             this.openCalendarButton.Name = "openCalendarButton";
-            this.openCalendarButton.Size = new System.Drawing.Size(108, 37);
+            this.openCalendarButton.Size = new System.Drawing.Size(124, 68);
             this.openCalendarButton.TabIndex = 0;
             this.openCalendarButton.Text = "Create Calendar";
             this.openCalendarButton.UseVisualStyleBackColor = true;
@@ -58,7 +58,7 @@
             "Polski",
             "Francais",
             "English"});
-            this.languageChoiceComboBox.Location = new System.Drawing.Point(34, 50);
+            this.languageChoiceComboBox.Location = new System.Drawing.Point(19, 37);
             this.languageChoiceComboBox.Name = "languageChoiceComboBox";
             this.languageChoiceComboBox.Size = new System.Drawing.Size(121, 21);
             this.languageChoiceComboBox.TabIndex = 1;
@@ -71,7 +71,7 @@
             this.calendarModeComboBox.Items.AddRange(new object[] {
             "One month",
             "Trimester"});
-            this.calendarModeComboBox.Location = new System.Drawing.Point(34, 117);
+            this.calendarModeComboBox.Location = new System.Drawing.Point(19, 85);
             this.calendarModeComboBox.Name = "calendarModeComboBox";
             this.calendarModeComboBox.Size = new System.Drawing.Size(121, 21);
             this.calendarModeComboBox.TabIndex = 4;
@@ -84,24 +84,25 @@
             "3/3",
             "4/4",
             "Random"});
-            this.workModeComboBox.Location = new System.Drawing.Point(34, 176);
+            this.workModeComboBox.Location = new System.Drawing.Point(19, 132);
             this.workModeComboBox.Name = "workModeComboBox";
             this.workModeComboBox.Size = new System.Drawing.Size(121, 21);
             this.workModeComboBox.TabIndex = 5;
             // 
             // modifyEmplListButton
             // 
-            this.modifyEmplListButton.Location = new System.Drawing.Point(194, 160);
+            this.modifyEmplListButton.Location = new System.Drawing.Point(179, 102);
             this.modifyEmplListButton.Name = "modifyEmplListButton";
-            this.modifyEmplListButton.Size = new System.Drawing.Size(108, 37);
+            this.modifyEmplListButton.Size = new System.Drawing.Size(108, 51);
             this.modifyEmplListButton.TabIndex = 6;
             this.modifyEmplListButton.Text = "Modify employee list";
             this.modifyEmplListButton.UseVisualStyleBackColor = true;
+            this.modifyEmplListButton.Click += new System.EventHandler(this.modifyEmplListButton_Click);
             // 
             // languageLabel
             // 
             this.languageLabel.AutoSize = true;
-            this.languageLabel.Location = new System.Drawing.Point(34, 34);
+            this.languageLabel.Location = new System.Drawing.Point(19, 21);
             this.languageLabel.Name = "languageLabel";
             this.languageLabel.Size = new System.Drawing.Size(55, 13);
             this.languageLabel.TabIndex = 7;
@@ -110,7 +111,7 @@
             // calendarModeLabel
             // 
             this.calendarModeLabel.AutoSize = true;
-            this.calendarModeLabel.Location = new System.Drawing.Point(34, 101);
+            this.calendarModeLabel.Location = new System.Drawing.Point(19, 69);
             this.calendarModeLabel.Name = "calendarModeLabel";
             this.calendarModeLabel.Size = new System.Drawing.Size(78, 13);
             this.calendarModeLabel.TabIndex = 8;
@@ -119,7 +120,7 @@
             // workModeLabel
             // 
             this.workModeLabel.AutoSize = true;
-            this.workModeLabel.Location = new System.Drawing.Point(31, 160);
+            this.workModeLabel.Location = new System.Drawing.Point(16, 116);
             this.workModeLabel.Name = "workModeLabel";
             this.workModeLabel.Size = new System.Drawing.Size(62, 13);
             this.workModeLabel.TabIndex = 11;
@@ -128,7 +129,7 @@
             // chosenDateLabel
             // 
             this.chosenDateLabel.AutoSize = true;
-            this.chosenDateLabel.Location = new System.Drawing.Point(260, 101);
+            this.chosenDateLabel.Location = new System.Drawing.Point(326, 22);
             this.chosenDateLabel.Name = "chosenDateLabel";
             this.chosenDateLabel.Size = new System.Drawing.Size(58, 13);
             this.chosenDateLabel.TabIndex = 13;
@@ -136,9 +137,9 @@
             // 
             // dateChoiceButton
             // 
-            this.dateChoiceButton.Location = new System.Drawing.Point(263, 34);
+            this.dateChoiceButton.Location = new System.Drawing.Point(179, 31);
             this.dateChoiceButton.Name = "dateChoiceButton";
-            this.dateChoiceButton.Size = new System.Drawing.Size(124, 39);
+            this.dateChoiceButton.Size = new System.Drawing.Size(108, 51);
             this.dateChoiceButton.TabIndex = 14;
             this.dateChoiceButton.Text = "Date choice";
             this.dateChoiceButton.UseVisualStyleBackColor = true;
@@ -146,7 +147,7 @@
             // 
             // chosenDateTextBox
             // 
-            this.chosenDateTextBox.Location = new System.Drawing.Point(263, 118);
+            this.chosenDateTextBox.Location = new System.Drawing.Point(325, 38);
             this.chosenDateTextBox.Name = "chosenDateTextBox";
             this.chosenDateTextBox.ReadOnly = true;
             this.chosenDateTextBox.Size = new System.Drawing.Size(124, 20);
@@ -157,7 +158,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CausesValidation = false;
-            this.ClientSize = new System.Drawing.Size(505, 224);
+            this.ClientSize = new System.Drawing.Size(468, 173);
             this.Controls.Add(this.chosenDateTextBox);
             this.Controls.Add(this.dateChoiceButton);
             this.Controls.Add(this.chosenDateLabel);

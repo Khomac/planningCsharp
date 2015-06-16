@@ -1,6 +1,6 @@
 ﻿namespace PlanningFor24hProjects
 {
-    partial class CalendarWindow
+    partial class CalendarForm
     {
         /// <summary>
         /// Required designer variable.

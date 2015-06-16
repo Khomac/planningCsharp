@@ -303,6 +303,71 @@ namespace PlanningFor24hProjects
                 return monthChoiceFormText[chosenLanguage];
             }
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            static Dictionary<string, string> saveAndCloseButtonText = new Dictionary<string, string>()
+            {
+                {"PL", "Zapisz i zamknij"},
+                {"EN", "Save and close"},
+                {"FR", "Enregistre et ferme"}
+            };
+
+            public static string saveAndCloseButton()
+            {
+                return saveAndCloseButtonText[chosenLanguage];
+            }
+
+//slownik dla emplListWindow
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            static Dictionary<string, string> emplListWindowText = new Dictionary<string, string>()
+            {
+                {"PL", "Lista pracowników"},
+                {"EN", "Employees list"},
+                {"FR", "Liste de employees"}
+            };
+
+            public static string emplListWindow()
+            {
+                return emplListWindowText[chosenLanguage];
+            }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            static Dictionary<string, string> delateEmplButtonText = new Dictionary<string, string>()
+            {
+                {"PL", "Usuń zaznaczony wpis"},
+                {"EN", "Delate choised position"},
+                {"FR", "Supprime la position choisi"}
+            };
+
+            public static string delateEmplButton()
+            {
+                return delateEmplButtonText[chosenLanguage];
+            }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            static Dictionary<string, string> addEmplButtonText  = new Dictionary<string, string>()
+            {
+                {"PL", "Dodaj nowego pracownika"},
+                {"EN", "Add new Employee"},
+                {"FR", "Ajoute le nouveau employee"}
+            };
+
+            public static string addEmplButton()
+            {
+                return addEmplButtonText[chosenLanguage];
+            }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            static Dictionary<string, string>  modifyEmplButtonText = new Dictionary<string, string>()
+            {
+                {"PL", "Modyfikuj zaznaczony wpis"},
+                {"EN", "Modify choised position"},
+                {"FR", "Modifie la position choisi"}
+            };
+
+            public static string modifyEmplButton()
+            {
+                return modifyEmplButtonText[chosenLanguage];
+            }
 
     }
 }

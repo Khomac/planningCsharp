@@ -44,17 +44,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseWindow.cs">
+    <Compile Include="BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BaseWindow.Designer.cs">
-      <DependentUpon>BaseWindow.cs</DependentUpon>
+    <Compile Include="BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CalendarWindow.cs">
+    <Compile Include="CalendarForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CalendarWindow.Designer.cs">
-      <DependentUpon>CalendarWindow.cs</DependentUpon>
+    <Compile Include="CalendarForm.Designer.cs">
+      <DependentUpon>CalendarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="emplListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="emplListForm.Designer.cs">
+      <DependentUpon>emplListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MonthChoiceForm.cs">
       <SubType>Form</SubType>
@@ -65,11 +71,14 @@
     <Compile Include="Translation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="BaseWindow.resx">
-      <DependentUpon>BaseWindow.cs</DependentUpon>
+    <EmbeddedResource Include="BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CalendarWindow.resx">
-      <DependentUpon>CalendarWindow.cs</DependentUpon>
+    <EmbeddedResource Include="CalendarForm.resx">
+      <DependentUpon>CalendarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="emplListForm.resx">
+      <DependentUpon>emplListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MonthChoiceForm.resx">
       <DependentUpon>MonthChoiceForm.cs</DependentUpon>

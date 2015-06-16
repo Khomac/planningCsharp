@@ -41,9 +41,11 @@
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.yearChoiceComboBox = new System.Windows.Forms.ComboBox();
-            this.closeButton = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox1.SuspendLayout();
+            this.saveAndCloseButton = new System.Windows.Forms.Button();
+            this.monthChoiceGroupBox = new System.Windows.Forms.GroupBox();
+            this.openCalendarButton = new System.Windows.Forms.Button();
+            this.yearChoiceLabel = new System.Windows.Forms.Label();
+            this.monthChoiceGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -175,49 +177,72 @@
             this.yearChoiceComboBox.TabIndex = 12;
             this.yearChoiceComboBox.SelectedIndexChanged += new System.EventHandler(this.yearChoiceComboBox_SelectedIndexChanged);
             // 
-            // closeButton
+            // saveAndCloseButton
             // 
-            this.closeButton.Location = new System.Drawing.Point(147, 233);
-            this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(218, 36);
-            this.closeButton.TabIndex = 13;
-            this.closeButton.Text = "button13";
-            this.closeButton.UseVisualStyleBackColor = true;
-            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            this.saveAndCloseButton.Location = new System.Drawing.Point(35, 236);
+            this.saveAndCloseButton.Name = "saveAndCloseButton";
+            this.saveAndCloseButton.Size = new System.Drawing.Size(218, 36);
+            this.saveAndCloseButton.TabIndex = 13;
+            this.saveAndCloseButton.Text = "Save and close";
+            this.saveAndCloseButton.UseVisualStyleBackColor = true;
+            this.saveAndCloseButton.Click += new System.EventHandler(this.saveAndCloseButton_Click);
             // 
-            // groupBox1
+            // monthChoiceGroupBox
             // 
-            this.groupBox1.Controls.Add(this.button12);
-            this.groupBox1.Controls.Add(this.button11);
-            this.groupBox1.Controls.Add(this.button10);
-            this.groupBox1.Controls.Add(this.button9);
-            this.groupBox1.Controls.Add(this.button8);
-            this.groupBox1.Controls.Add(this.button7);
-            this.groupBox1.Controls.Add(this.button6);
-            this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Location = new System.Drawing.Point(16, 59);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(475, 159);
-            this.groupBox1.TabIndex = 14;
-            this.groupBox1.TabStop = false;
+            this.monthChoiceGroupBox.Controls.Add(this.button12);
+            this.monthChoiceGroupBox.Controls.Add(this.button11);
+            this.monthChoiceGroupBox.Controls.Add(this.button10);
+            this.monthChoiceGroupBox.Controls.Add(this.button9);
+            this.monthChoiceGroupBox.Controls.Add(this.button8);
+            this.monthChoiceGroupBox.Controls.Add(this.button7);
+            this.monthChoiceGroupBox.Controls.Add(this.button6);
+            this.monthChoiceGroupBox.Controls.Add(this.button5);
+            this.monthChoiceGroupBox.Controls.Add(this.button4);
+            this.monthChoiceGroupBox.Controls.Add(this.button3);
+            this.monthChoiceGroupBox.Controls.Add(this.button2);
+            this.monthChoiceGroupBox.Controls.Add(this.button1);
+            this.monthChoiceGroupBox.Location = new System.Drawing.Point(16, 59);
+            this.monthChoiceGroupBox.Name = "monthChoiceGroupBox";
+            this.monthChoiceGroupBox.Size = new System.Drawing.Size(475, 159);
+            this.monthChoiceGroupBox.TabIndex = 14;
+            this.monthChoiceGroupBox.TabStop = false;
+            this.monthChoiceGroupBox.Text = "Month";
+            // 
+            // openCalendarButton
+            // 
+            this.openCalendarButton.Location = new System.Drawing.Point(259, 236);
+            this.openCalendarButton.Name = "openCalendarButton";
+            this.openCalendarButton.Size = new System.Drawing.Size(218, 36);
+            this.openCalendarButton.TabIndex = 15;
+            this.openCalendarButton.Text = "Load calendar";
+            this.openCalendarButton.UseVisualStyleBackColor = true;
+            this.openCalendarButton.Click += new System.EventHandler(this.openCalendarButton_Click);
+            // 
+            // yearChoiceLabel
+            // 
+            this.yearChoiceLabel.AutoSize = true;
+            this.yearChoiceLabel.Location = new System.Drawing.Point(147, 13);
+            this.yearChoiceLabel.Name = "yearChoiceLabel";
+            this.yearChoiceLabel.Size = new System.Drawing.Size(29, 13);
+            this.yearChoiceLabel.TabIndex = 16;
+            this.yearChoiceLabel.Text = "Year";
             // 
             // MonthChoiceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(508, 284);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.closeButton);
+            this.Controls.Add(this.yearChoiceLabel);
+            this.Controls.Add(this.openCalendarButton);
+            this.Controls.Add(this.monthChoiceGroupBox);
+            this.Controls.Add(this.saveAndCloseButton);
             this.Controls.Add(this.yearChoiceComboBox);
             this.Name = "MonthChoiceForm";
             this.Text = "MonthChoiceForm";
             this.Load += new System.EventHandler(this.MonthChoiceForm_Load);
-            this.groupBox1.ResumeLayout(false);
+            this.monthChoiceGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -236,8 +261,10 @@
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.ComboBox yearChoiceComboBox;
-        private System.Windows.Forms.Button closeButton;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button saveAndCloseButton;
+        private System.Windows.Forms.GroupBox monthChoiceGroupBox;
+        private System.Windows.Forms.Button openCalendarButton;
+        private System.Windows.Forms.Label yearChoiceLabel;
 
 
     }

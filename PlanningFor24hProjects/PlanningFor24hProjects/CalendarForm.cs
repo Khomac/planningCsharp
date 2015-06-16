@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace PlanningFor24hProjects
 {
-    public partial class CalendarWindow : Form
+    public partial class CalendarForm : Form
     {
         ListViewItem calendarItem = null;
         
@@ -14,7 +14,7 @@ namespace PlanningFor24hProjects
         private bool listViewMouseDown = true;
         private int year, month = 0;
 
-        public CalendarWindow(int year, int month)
+        public CalendarForm(int year, int month)
         {
             this.year = year;
             this.month = month;            
@@ -62,7 +62,7 @@ namespace PlanningFor24hProjects
             }
 
             updateTranslations();
-            this.monthAndYearLabel.Text = BaseWindow.chosenDateText;
+            this.monthAndYearLabel.Text = BaseForm.chosenDateText;
         }
 
         private void calendarField_DrawSubItem(object sender, DrawListViewSubItemEventArgs e)

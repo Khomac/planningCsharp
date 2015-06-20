@@ -10,9 +10,13 @@ using System.Windows.Forms;
 
 namespace PlanningFor24hProjects
 {
-    public partial class emplListForm : Form
+    public partial class EmplListForm : Form
     {
-        public emplListForm()
+        public ModifyProjectsListForm modifyProjectsListWindow;
+        public AddOrModifyEmplForm addOrModifyEmplWindow;
+        public static ListViewItem emplListViewItem;
+
+        public EmplListForm()
         {
             InitializeComponent();
         }
@@ -20,9 +24,10 @@ namespace PlanningFor24hProjects
         private void emplListForm_Load(object sender, EventArgs e)
         {
             updateTranslations();
+            
         }
 
-        public void updateTranslations()
+        public void updateTranslations() // zaladowanie stringow z metod klasy Translation do .Text elementow tej formy
         {
             saveAndCloseButton.Text = Translation.saveAndCloseButton();
             modifyEmplButton.Text = Translation.modifyEmplButton();
@@ -30,5 +35,29 @@ namespace PlanningFor24hProjects
             delateEmplButton.Text = Translation.delateEmplButton();
             this.Text = Translation.emplListWindow();
         }
+
+        private void modifyProjectsListButton_Click(object sender, EventArgs e)
+        {
+            modifyProjectsListWindow = new ModifyProjectsListForm();
+            modifyProjectsListWindow.Visible = true;
+        }
+
+        private void addEmplButton_Click(object sender, EventArgs e)
+        {
+            addOrModifyEmplWindow = new AddOrModifyEmplForm();
+            addOrModifyEmplWindow.Visible = true;
+        }
+
+        private void saveAndCloseButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        public void addItemToEmplListView() //tego nie umiem wwywolac
+        {
+            emplListView.Items.Add(emplListViewItem);
+            
+        }
+
     }
 }

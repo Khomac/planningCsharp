@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace PlanningFor24hProjects
 {
-    class Translation
+    class Translation //klasa w ktorej wpisane sa wszystkie teksty znajdujace sie na elementach aplikacji - odpalajac metode z tej klasy odpowiadajaca odpowiedniemu elementowi
+        //(co dzieje sie automatycznie przy ladowaniu nowe4go okna albo zmianie jezyka) dostajemy string w odpowiednim jezyku - a w docelowym obie3kcie 
+        //zmieniamy wartosc argumentu Tekst danego elementu
     {
         public static string chosenLanguage = "EN";
 
@@ -38,6 +40,19 @@ namespace PlanningFor24hProjects
             public static string openCalendarButton()
             {
                 return openCalendarButtonText[chosenLanguage];
+            }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            static Dictionary<string, string>  dateChoiceButtonText= new Dictionary<string, string>()
+            {
+                {"PL", "Wybierz datę"},
+                {"EN", "Chose date"},
+                {"FR", "Choisi la date"}
+            };
+
+            public static string dateChoiceButton()
+            {
+                return dateChoiceButtonText[chosenLanguage];
             }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -80,17 +95,18 @@ namespace PlanningFor24hProjects
             }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            static Dictionary<string, string> datePickerLabelText = new Dictionary<string, string>()
+            static Dictionary<string, string>  chosenDateLabelText = new Dictionary<string, string>()
             {
-                {"PL", "Wybrany okres"},
-                {"EN", "Chosen period"},
-                {"FR", "Periode choisi"}//tutaj zrobic drugi dictionary jako alternatywny wybor zaleznie od zawartosci pola wyboru calendar mode
+                {"PL", "Aktualnie wybrana data: \n\t"+BaseForm.chosenDateText},
+                {"EN", "Actually chosen date: \n\t"+BaseForm.chosenDateText},
+                {"FR", "La date choisi: \n\t"+BaseForm.chosenDateText}
             };
 
-            public static string datePickerLabel()
+            public static string chosenDateLabel()
             {
-                return datePickerLabelText[chosenLanguage];
+                return chosenDateLabelText[chosenLanguage];
             }
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             static Dictionary<string, string> modifyEmplListButtonText = new Dictionary<string, string>()
@@ -238,16 +254,29 @@ namespace PlanningFor24hProjects
             }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            static Dictionary<string, string> clearCalendarButtonText = new Dictionary<string, string>()
+            static Dictionary<string, string> clearAllCalendarButtonText = new Dictionary<string, string>()
             {
-                {"PL", "Wyczyść wszystko"},
-                {"EN", "Clear all"},
-                {"FR", "Efface tout"}
+                {"PL", "Wyczyść wszystkie pola"},
+                {"EN", "Clear all fields"},
+                {"FR", "Vide tous les champs"}
             };
 
-            public static string clearCalendarButton()
+            public static string clearAllCalendarButton()
             {
-                return clearCalendarButtonText[chosenLanguage];
+                return clearAllCalendarButtonText[chosenLanguage];
+            }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            static Dictionary<string, string> clearAutomaticCalendarButtonText = new Dictionary<string, string>()
+            {
+                {"PL", "Wyczyść pola wypełnione automatycznie"},
+                {"EN", "Clear automatically filled fields"},
+                {"FR", "Vide les champs remplis automatiquement"}
+            };
+
+            public static string clearAutomaticCalendarButton()
+            {
+                return clearAutomaticCalendarButtonText[chosenLanguage];
             }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

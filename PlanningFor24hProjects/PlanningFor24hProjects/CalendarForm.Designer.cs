@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.calendarField = new System.Windows.Forms.ListView();
+            this.calendarListView = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.monthAndYearLabel = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
@@ -43,29 +43,30 @@
             this.dayRadioButton = new System.Windows.Forms.RadioButton();
             this.createCalendarButton = new System.Windows.Forms.Button();
             this.exportCalendarButton = new System.Windows.Forms.Button();
-            this.clearCalendarButton = new System.Windows.Forms.Button();
+            this.clearAllCalendarButton = new System.Windows.Forms.Button();
+            this.clearAutomaticCalendarButton = new System.Windows.Forms.Button();
             this.shiftTypeBox.SuspendLayout();
             this.SuspendLayout();
             // 
-            // calendarField
+            // calendarListView
             // 
-            this.calendarField.Alignment = System.Windows.Forms.ListViewAlignment.Left;
-            this.calendarField.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.calendarListView.Alignment = System.Windows.Forms.ListViewAlignment.Left;
+            this.calendarListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1});
-            this.calendarField.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.calendarField.GridLines = true;
-            this.calendarField.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.calendarField.Location = new System.Drawing.Point(177, 33);
-            this.calendarField.Name = "calendarField";
-            this.calendarField.OwnerDraw = true;
-            this.calendarField.Size = new System.Drawing.Size(924, 346);
-            this.calendarField.TabIndex = 0;
-            this.calendarField.UseCompatibleStateImageBehavior = false;
-            this.calendarField.View = System.Windows.Forms.View.Details;
-            this.calendarField.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.CalendarField_DrawColumnHeader);
-            this.calendarField.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.calendarField_DrawSubItem);
-            this.calendarField.MouseDown += new System.Windows.Forms.MouseEventHandler(this.calendarField_MouseDown);
-            this.calendarField.MouseUp += new System.Windows.Forms.MouseEventHandler(this.calendarField_MouseUp);
+            this.calendarListView.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.calendarListView.GridLines = true;
+            this.calendarListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.calendarListView.Location = new System.Drawing.Point(177, 33);
+            this.calendarListView.Name = "calendarListView";
+            this.calendarListView.OwnerDraw = true;
+            this.calendarListView.Size = new System.Drawing.Size(924, 346);
+            this.calendarListView.TabIndex = 0;
+            this.calendarListView.UseCompatibleStateImageBehavior = false;
+            this.calendarListView.View = System.Windows.Forms.View.Details;
+            this.calendarListView.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.CalendarField_DrawColumnHeader);
+            this.calendarListView.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.calendarField_DrawSubItem);
+            this.calendarListView.MouseDown += new System.Windows.Forms.MouseEventHandler(this.calendarField_MouseDown);
+            this.calendarListView.MouseUp += new System.Windows.Forms.MouseEventHandler(this.calendarField_MouseUp);
             // 
             // columnHeader1
             // 
@@ -91,11 +92,14 @@
             // 
             // listView2
             // 
-            this.listView2.Location = new System.Drawing.Point(177, 417);
+            this.listView2.Alignment = System.Windows.Forms.ListViewAlignment.Left;
+            this.listView2.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listView2.Location = new System.Drawing.Point(177, 401);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(924, 92);
+            this.listView2.Size = new System.Drawing.Size(924, 108);
             this.listView2.TabIndex = 3;
             this.listView2.UseCompatibleStateImageBehavior = false;
+            this.listView2.View = System.Windows.Forms.View.Details;
             // 
             // shiftTypeBox
             // 
@@ -209,37 +213,47 @@
             // 
             // exportCalendarButton
             // 
-            this.exportCalendarButton.Location = new System.Drawing.Point(1124, 417);
+            this.exportCalendarButton.Location = new System.Drawing.Point(1124, 401);
             this.exportCalendarButton.Name = "exportCalendarButton";
-            this.exportCalendarButton.Size = new System.Drawing.Size(187, 92);
+            this.exportCalendarButton.Size = new System.Drawing.Size(187, 108);
             this.exportCalendarButton.TabIndex = 6;
             this.exportCalendarButton.Text = "Export";
             this.exportCalendarButton.UseVisualStyleBackColor = true;
             // 
-            // clearCalendarButton
+            // clearAllCalendarButton
             // 
-            this.clearCalendarButton.Location = new System.Drawing.Point(19, 417);
-            this.clearCalendarButton.Name = "clearCalendarButton";
-            this.clearCalendarButton.Size = new System.Drawing.Size(134, 54);
-            this.clearCalendarButton.TabIndex = 7;
-            this.clearCalendarButton.Text = "Clear";
-            this.clearCalendarButton.UseVisualStyleBackColor = true;
-            this.clearCalendarButton.Click += new System.EventHandler(this.clearCalendarButton_Click);
+            this.clearAllCalendarButton.Location = new System.Drawing.Point(19, 401);
+            this.clearAllCalendarButton.Name = "clearAllCalendarButton";
+            this.clearAllCalendarButton.Size = new System.Drawing.Size(134, 46);
+            this.clearAllCalendarButton.TabIndex = 7;
+            this.clearAllCalendarButton.Text = "Clear all fields";
+            this.clearAllCalendarButton.UseVisualStyleBackColor = true;
+            this.clearAllCalendarButton.Click += new System.EventHandler(this.clearCalendarButton_Click);
             // 
-            // CalendarWindow
+            // clearAutomaticCalendarButton
+            // 
+            this.clearAutomaticCalendarButton.Location = new System.Drawing.Point(19, 463);
+            this.clearAutomaticCalendarButton.Name = "clearAutomaticCalendarButton";
+            this.clearAutomaticCalendarButton.Size = new System.Drawing.Size(134, 46);
+            this.clearAutomaticCalendarButton.TabIndex = 8;
+            this.clearAutomaticCalendarButton.Text = "Clear automatically filled fields";
+            this.clearAutomaticCalendarButton.UseVisualStyleBackColor = true;
+            // 
+            // CalendarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1332, 528);
-            this.Controls.Add(this.clearCalendarButton);
+            this.Controls.Add(this.clearAutomaticCalendarButton);
+            this.Controls.Add(this.clearAllCalendarButton);
             this.Controls.Add(this.exportCalendarButton);
             this.Controls.Add(this.createCalendarButton);
             this.Controls.Add(this.shiftTypeBox);
             this.Controls.Add(this.listView2);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.monthAndYearLabel);
-            this.Controls.Add(this.calendarField);
-            this.Name = "CalendarWindow";
+            this.Controls.Add(this.calendarListView);
+            this.Name = "CalendarForm";
             this.Text = "CalendarWindow";
             this.Load += new System.EventHandler(this.CalendarWindow_Load);
             this.shiftTypeBox.ResumeLayout(false);
@@ -251,7 +265,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ListView calendarField;
+        private System.Windows.Forms.ListView calendarListView;
         private System.Windows.Forms.Label monthAndYearLabel;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ListView listView2;
@@ -263,10 +277,11 @@
         private System.Windows.Forms.RadioButton holidayRadioButton;
         private System.Windows.Forms.Button createCalendarButton;
         private System.Windows.Forms.Button exportCalendarButton;
-        private System.Windows.Forms.Button clearCalendarButton;
+        private System.Windows.Forms.Button clearAllCalendarButton;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.Label hoursNumberLabel;
         private System.Windows.Forms.ComboBox hoursNumberComboBox;
+        private System.Windows.Forms.Button clearAutomaticCalendarButton;
 
     }
 }

@@ -21,25 +21,25 @@ namespace PlanningFor24hProjects
             InitializeComponent();
         }
 
-        public void updateTranslations()
+        public void updateTranslations() // zaladowanie stringow z metod klasy Translation do .Text elementow tej formy
         {
             shiftTypeBox.Text = Translation.shiftType();
             nightRadioButton.Text = Translation.nightRadioButton();
-            //monthAndYearLabel.Text = Translation.mon - to nie translation, tylko ma sie wypelniac zgodnie z wyborem mieisaca i roku
             dayRadioButton.Text = Translation.dayRadioButton();
             holidayRadioButton.Text = Translation.holidayRadioButton();
             sicknessRadioButton.Text = Translation.sicknessRadioButton();
             emptyRadioButton.Text = Translation.emptyRadioButton();
-            clearCalendarButton.Text = Translation.clearCalendarButton();
+            clearAllCalendarButton.Text = Translation.clearAllCalendarButton();
             hoursNumberLabel.Text = Translation.hoursNumberLabel();
             createCalendarButton.Text = Translation.createCalendarButton();
+            clearAutomaticCalendarButton.Text = Translation.clearAutomaticCalendarButton();
             this.Text = Translation.calendarWindow();
 
-            calendarField.Columns[0].Text = Translation.nameAndSurname();
-            for (int i = 1; i < calendarField.Columns.Count; i++)
+            calendarListView.Columns[0].Text = Translation.nameAndSurname();
+            for (int i = 1; i < calendarListView.Columns.Count; i++)
             {
                 int dayOfWeek = (int)(new DateTime(year, month, i).DayOfWeek); //DayOfWeek zwraca enuma, trzeba ręcznie zrzutować na inta
-                calendarField.Columns[i].Text = i.ToString() + "\n" + Translation.dayOfWeek(dayOfWeek);
+                calendarListView.Columns[i].Text = i.ToString() + "\n" + Translation.dayOfWeek(dayOfWeek);
             }
         }
 
@@ -47,22 +47,22 @@ namespace PlanningFor24hProjects
         {
             for (int j = 1; j <= DateTime.DaysInMonth(year, month); j++)
             {
-                calendarField.Columns.Add("");
-                calendarField.Columns[j].Width = 23;
+                calendarListView.Columns.Add("");
+                calendarListView.Columns[j].Width = 23;
             }
 
-            for (int i = 0; i < 10;i++ ) //petla na zaludnienie kalendarza
+            for (int i = 0; i < 10;i++ ) //petla na zaludnienie kalendarza - tymczasowo by default, pozniej bedzie wykorzystywac elementy z emplListForm
             {
                 calendarItem = new ListViewItem("Imie i Nazwisko");
                 for (int j = 0; j < DateTime.DaysInMonth(year, month); j++)
                 {
                     calendarItem.SubItems.Add("");
                 }
-                calendarField.Items.Add(calendarItem);
+                calendarListView.Items.Add(calendarItem); //przekazanie stworzonego itemu do listView
             }
 
-            updateTranslations();
-            this.monthAndYearLabel.Text = BaseForm.chosenDateText;
+            updateTranslations(); //odpalenie zaladowania wlasciwych tekstow na etapie ladowania formy
+            this.monthAndYearLabel.Text = BaseForm.chosenDateText; //ustawienie labela formy na wybrana date w MonthChoiceForm
         }
 
         private void calendarField_DrawSubItem(object sender, DrawListViewSubItemEventArgs e)
@@ -81,7 +81,7 @@ namespace PlanningFor24hProjects
                     e.Graphics.FillRectangle(Brushes.Green, e.Bounds);
                 if (e.SubItem.Text == "L4")
                     e.Graphics.FillRectangle(Brushes.DarkCyan, e.Bounds);
-                if (e.SubItem.Text == "")
+                if (e.SubItem.Text == "") //malowanie pol odpowiadajacych weekendowi na rozowo, a reszty na bialo
                 { 
                     if (new DateTime(year, month, e.ColumnIndex).DayOfWeek == DayOfWeek.Saturday ||
                         new DateTime(year, month, e.ColumnIndex).DayOfWeek == DayOfWeek.Sunday)
@@ -101,7 +101,7 @@ namespace PlanningFor24hProjects
         {
             if (listViewMouseDown)
             {
-                var info = calendarField.HitTest(e.X, e.Y);
+                var info = calendarListView.HitTest(e.X, e.Y);
                 if (info.Item != null)
                 {
                     var col = info.Item.SubItems.IndexOf(info.SubItem);
@@ -145,9 +145,9 @@ namespace PlanningFor24hProjects
             e.Graphics.DrawLine(new Pen(Color.Black,2), e.Bounds.Left, e.Bounds.Bottom, e.Bounds.Right, e.Bounds.Bottom);
         }
 
-        private void clearCalendarButton_Click(object sender, EventArgs e)
+        private void clearCalendarButton_Click(object sender, EventArgs e) //czyszczenie zawartosci wszystkich pol kalendarza
         {
-            foreach (ListViewItem item in calendarField.Items)
+            foreach (ListViewItem item in calendarListView.Items)
             {
                 for (int i = 1; i < item.SubItems.Count;i++ )
                 {

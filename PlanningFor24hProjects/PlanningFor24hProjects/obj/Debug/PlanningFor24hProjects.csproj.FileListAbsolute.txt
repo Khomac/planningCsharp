@@ -2,8 +2,6 @@ C:\Users\Komac\Desktop\planningC#\PlanningFor24hProjects\PlanningFor24hProjects\
 C:\Users\Komac\Desktop\planningC#\PlanningFor24hProjects\PlanningFor24hProjects\bin\Debug\PlanningFor24hProjects.exe
 C:\Users\Komac\Desktop\planningC#\PlanningFor24hProjects\PlanningFor24hProjects\bin\Debug\PlanningFor24hProjects.pdb
 C:\Users\Komac\Desktop\planningC#\PlanningFor24hProjects\PlanningFor24hProjects\obj\Debug\PlanningFor24hProjects.csprojResolveAssemblyReference.cache
-C:\Users\Komac\Desktop\planningC#\PlanningFor24hProjects\PlanningFor24hProjects\obj\Debug\PlanningFor24hProjects.BaseWindow.resources
-C:\Users\Komac\Desktop\planningC#\PlanningFor24hProjects\PlanningFor24hProjects\obj\Debug\PlanningFor24hProjects.CalendarWindow.resources
 C:\Users\Komac\Desktop\planningC#\PlanningFor24hProjects\PlanningFor24hProjects\obj\Debug\PlanningFor24hProjects.Properties.Resources.resources
 C:\Users\Komac\Desktop\planningC#\PlanningFor24hProjects\PlanningFor24hProjects\obj\Debug\PlanningFor24hProjects.csproj.GenerateResource.Cache
 C:\Users\Komac\Desktop\planningC#\PlanningFor24hProjects\PlanningFor24hProjects\obj\Debug\PlanningFor24hProjects.exe
@@ -21,3 +19,9 @@ C:\Users\JK\Desktop\planningCsharp\PlanningFor24hProjects\PlanningFor24hProjects
 C:\Users\JK\Desktop\planningCsharp\PlanningFor24hProjects\PlanningFor24hProjects\obj\Debug\PlanningFor24hProjects.emplListForm.resources
 C:\Users\JK\Desktop\planningCsharp\PlanningFor24hProjects\PlanningFor24hProjects\obj\Debug\PlanningFor24hProjects.BaseForm.resources
 C:\Users\JK\Desktop\planningCsharp\PlanningFor24hProjects\PlanningFor24hProjects\obj\Debug\PlanningFor24hProjects.CalendarForm.resources
+C:\Users\Komac\Desktop\planningC#\PlanningFor24hProjects\PlanningFor24hProjects\obj\Debug\PlanningFor24hProjects.BaseForm.resources
+C:\Users\Komac\Desktop\planningC#\PlanningFor24hProjects\PlanningFor24hProjects\obj\Debug\PlanningFor24hProjects.CalendarForm.resources
+C:\Users\Komac\Desktop\planningC#\PlanningFor24hProjects\PlanningFor24hProjects\obj\Debug\PlanningFor24hProjects.emplListForm.resources
+C:\Users\Komac\Desktop\planningC#\PlanningFor24hProjects\PlanningFor24hProjects\obj\Debug\PlanningFor24hProjects.AddOrModifyEmplForm.resources
+C:\Users\Komac\Desktop\planningC#\PlanningFor24hProjects\PlanningFor24hProjects\obj\Debug\PlanningFor24hProjects.ModifyProjectsListForm.resources
+C:\Users\Komac\Desktop\planningC#\PlanningFor24hProjects\PlanningFor24hProjects\obj\Debug\PlanningFor24hProjects.AddNewProjectForm.resources

@@ -14,38 +14,39 @@ namespace PlanningFor24hProjects
     {
         public CalendarForm calendarWindow = null;
         public MonthChoiceForm monthChoiceWindow = null;
-        public emplListForm emplListWindow = null;
+        public EmplListForm emplListWindow = null;
 
-        public static string chosenDateText;
-        public static int chosenMonth = 0;
-        public static int chosenYear = 0;
+        public static int chosenMonth = DateTime.Now.Month;
+        public static int chosenYear = DateTime.Now.Year;
+        public static string chosenDateText = chosenMonth.ToString() + "/" + chosenYear.ToString();
+
 
         public BaseForm()
         {
             InitializeComponent();
         }
 
-        public void updateTranslations()
+        public void updateTranslations()// zaladowanie stringow z metod klasy Translation do .Text elementow tej formy
         {
             openCalendarButton.Text = Translation.openCalendarButton();
             languageLabel.Text = Translation.languageLabel();
             calendarModeLabel.Text = Translation.calendarModeLabel();
             workModeLabel.Text = Translation.workModeLabel();
-            chosenDateLabel.Text = Translation.datePickerLabel();
             modifyEmplListButton.Text = Translation.modifyEmplListButton();
+            chosenDateLabel.Text = Translation.chosenDateLabel();
+            dateChoiceButton.Text = Translation.dateChoiceButton();
             this.Text = Translation.baseWindow();
         }
 
         private void openCalendarButton_Click(object sender, EventArgs e)
         {
-            calendarWindow = new CalendarForm(chosenYear, chosenMonth); // wartosci wybrane z kalendarza
+            calendarWindow = new CalendarForm(chosenYear, chosenMonth); // wartosci wybrane wczesniej z kalendarza albo domyslne
             calendarWindow.Visible = true;
         }
 
         private void BaseWindow_Load(object sender, EventArgs e)
         {
-            updateTranslations();
-
+            updateTranslations(); //odpalenie zaladowania wlasciwych tekstow na etapie ladowania formy
         }
 
 
@@ -70,7 +71,7 @@ namespace PlanningFor24hProjects
 
         }
 
-        private void dateChoiceButton_Click(object sender, EventArgs e)
+        private void dateChoiceButton_Click(object sender, EventArgs e) //otwarcie okna wyboru miesiaca
         {
             //if (monthChoiceWindow==null) //opracowac lepszy sprawdzacz czy otwarta jest tylko jedna forma naraz
             {
@@ -79,10 +80,15 @@ namespace PlanningFor24hProjects
             }
         }
 
-        private void modifyEmplListButton_Click(object sender, EventArgs e)
+        private void modifyEmplListButton_Click(object sender, EventArgs e) //otwarcie okna wyboru pracownikow (opracowac metode na tylko jedno okienko otwarte naraz)
         {
-            emplListWindow = new emplListForm();
+            emplListWindow = new EmplListForm();
             emplListWindow.Visible = true;
+        }
+
+        private void BaseForm_Load(object sender, EventArgs e)
+        {
+            updateTranslations();
         }
 
 

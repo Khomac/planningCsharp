@@ -26,10 +26,10 @@ namespace PlanningFor24hProjects
             this.yearChoiceComboBox.SelectedItem = DateTime.Now.Year.ToString(); 
             //fragment do modyfikacji wyswietlania od razu miesiecy na kalendarzu
             for (int i = -2; i <= 4;i++)
-                this.yearChoiceComboBox.Items.Add(DateTime.Now.Year + i);
+                this.yearChoiceComboBox.Items.Add(DateTime.Now.Year + i); //dodanie lat od teraz -2 do +4
         }
 
-        public void updateTranslations()
+        public void updateTranslations() // zaladowanie stringow z metod klasy Translation do .Text elementow tej formy
         {
             int i = 12;
 
@@ -45,6 +45,7 @@ namespace PlanningFor24hProjects
 
         }
 
+//ustawienie miesiaca wynikajace z klikniecia w odpowiedni przycisk
         private void button1_Click(object sender, EventArgs e)
         {
             BaseForm.chosenMonth = 1;
@@ -107,10 +108,12 @@ namespace PlanningFor24hProjects
 
         private void saveAndCloseButton_Click(object sender, EventArgs e)
         {
-            this.Close();
             BaseForm.chosenDateText = BaseForm.chosenMonth.ToString() + "/" + BaseForm.chosenYear.ToString();
+            this.Close();
+            //this.Dispose(); //mialo sluzyc wyzerowaniu obiektu, zeby dalo sie sprawdzic czy jest null zeby nie bylo dwoch otwartych okien naraz
         }
 
+//wybranie roku wynikajace z wybrania odpowiedniego roku z comboboxa
         private void yearChoiceComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             BaseForm.chosenYear = Int32.Parse(this.yearChoiceComboBox.Text);
@@ -121,7 +124,7 @@ namespace PlanningFor24hProjects
             calendarWindow = new CalendarForm(BaseForm.chosenYear, BaseForm.chosenMonth); // wartosci wybrane z kalendarza
             calendarWindow.Visible = true;
             this.Close();
-            BaseForm.chosenDateText = BaseForm.chosenMonth.ToString() + "/" + BaseForm.chosenYear.ToString();
+            //this.Dispose(); //mialo sluzyc wyzerowaniu obiektu, zeby dalo sie sprawdzic czy jest null zeby nie bylo dwoch otwartych okien naraz
         }
 
 

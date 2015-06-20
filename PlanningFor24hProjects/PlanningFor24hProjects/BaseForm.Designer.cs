@@ -36,16 +36,15 @@
             this.languageLabel = new System.Windows.Forms.Label();
             this.calendarModeLabel = new System.Windows.Forms.Label();
             this.workModeLabel = new System.Windows.Forms.Label();
-            this.chosenDateLabel = new System.Windows.Forms.Label();
             this.dateChoiceButton = new System.Windows.Forms.Button();
-            this.chosenDateTextBox = new System.Windows.Forms.TextBox();
+            this.chosenDateLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // openCalendarButton
             // 
-            this.openCalendarButton.Location = new System.Drawing.Point(325, 85);
+            this.openCalendarButton.Location = new System.Drawing.Point(325, 102);
             this.openCalendarButton.Name = "openCalendarButton";
-            this.openCalendarButton.Size = new System.Drawing.Size(124, 68);
+            this.openCalendarButton.Size = new System.Drawing.Size(108, 51);
             this.openCalendarButton.TabIndex = 0;
             this.openCalendarButton.Text = "Create Calendar";
             this.openCalendarButton.UseVisualStyleBackColor = true;
@@ -126,15 +125,6 @@
             this.workModeLabel.TabIndex = 11;
             this.workModeLabel.Text = "Work mode";
             // 
-            // chosenDateLabel
-            // 
-            this.chosenDateLabel.AutoSize = true;
-            this.chosenDateLabel.Location = new System.Drawing.Point(326, 22);
-            this.chosenDateLabel.Name = "chosenDateLabel";
-            this.chosenDateLabel.Size = new System.Drawing.Size(58, 13);
-            this.chosenDateLabel.TabIndex = 13;
-            this.chosenDateLabel.Text = "First month";
-            // 
             // dateChoiceButton
             // 
             this.dateChoiceButton.Location = new System.Drawing.Point(179, 31);
@@ -145,23 +135,24 @@
             this.dateChoiceButton.UseVisualStyleBackColor = true;
             this.dateChoiceButton.Click += new System.EventHandler(this.dateChoiceButton_Click);
             // 
-            // chosenDateTextBox
+            // chosenDateLabel
             // 
-            this.chosenDateTextBox.Location = new System.Drawing.Point(325, 38);
-            this.chosenDateTextBox.Name = "chosenDateTextBox";
-            this.chosenDateTextBox.ReadOnly = true;
-            this.chosenDateTextBox.Size = new System.Drawing.Size(124, 20);
-            this.chosenDateTextBox.TabIndex = 15;
+            this.chosenDateLabel.AutoSize = true;
+            this.chosenDateLabel.Location = new System.Drawing.Point(322, 37);
+            this.chosenDateLabel.Name = "chosenDateLabel";
+            this.chosenDateLabel.Size = new System.Drawing.Size(129, 13);
+            this.chosenDateLabel.TabIndex = 15;
+            this.chosenDateLabel.Text = "chosen date label \\n date";
+            this.chosenDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // BaseWindow
+            // BaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CausesValidation = false;
-            this.ClientSize = new System.Drawing.Size(468, 173);
-            this.Controls.Add(this.chosenDateTextBox);
-            this.Controls.Add(this.dateChoiceButton);
+            this.ClientSize = new System.Drawing.Size(466, 173);
             this.Controls.Add(this.chosenDateLabel);
+            this.Controls.Add(this.dateChoiceButton);
             this.Controls.Add(this.workModeLabel);
             this.Controls.Add(this.calendarModeLabel);
             this.Controls.Add(this.languageLabel);
@@ -170,8 +161,9 @@
             this.Controls.Add(this.calendarModeComboBox);
             this.Controls.Add(this.languageChoiceComboBox);
             this.Controls.Add(this.openCalendarButton);
-            this.Name = "BaseWindow";
+            this.Name = "BaseForm";
             this.Text = "Settings window";
+            this.Load += new System.EventHandler(this.BaseForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,9 +179,8 @@
         private System.Windows.Forms.Label languageLabel;
         private System.Windows.Forms.Label calendarModeLabel;
         private System.Windows.Forms.Label workModeLabel;
-        private System.Windows.Forms.Label chosenDateLabel;
         private System.Windows.Forms.Button dateChoiceButton;
-        private System.Windows.Forms.TextBox chosenDateTextBox;
+        private System.Windows.Forms.Label chosenDateLabel;
     }
 }
 

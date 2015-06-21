@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.emplListView = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -43,29 +42,23 @@
             // emplListView
             // 
             this.emplListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
             this.emplListView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.emplListView.GridLines = true;
             this.emplListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.emplListView.Location = new System.Drawing.Point(12, 12);
+            this.emplListView.Location = new System.Drawing.Point(13, 12);
             this.emplListView.Name = "emplListView";
-            this.emplListView.Size = new System.Drawing.Size(914, 355);
+            this.emplListView.Size = new System.Drawing.Size(913, 355);
             this.emplListView.TabIndex = 0;
             this.emplListView.UseCompatibleStateImageBehavior = false;
             this.emplListView.View = System.Windows.Forms.View.Details;
             // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Surname";
-            this.columnHeader1.Width = 0;
-            // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Name";
-            this.columnHeader2.Width = 196;
+            this.columnHeader2.Width = 237;
             // 
             // columnHeader3
             // 
@@ -151,7 +144,6 @@
         private System.Windows.Forms.Button addEmplButton;
         private System.Windows.Forms.Button saveAndCloseButton;
         private System.Windows.Forms.Button modifyProjectsListButton;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;

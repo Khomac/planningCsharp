@@ -53,10 +53,15 @@ namespace PlanningFor24hProjects
             this.Visible = false;
         }
 
-        public void addItemToEmplListView(ListViewItem itemToAdd)
+        public void addItemToEmplListView(ListViewItem itemToAdd) //funkcja ktora dodajemy kolejne itemy 
         {
             emplListView.Items.Add(itemToAdd);
             
+        }
+
+        public ListView getListView() // funkcja ktora zwraca liste, ktora potem wykorzystyjemy do zaeplnienia kalendarza
+        {
+            return emplListView;
         }
 
     }

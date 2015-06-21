@@ -13,7 +13,7 @@ namespace PlanningFor24hProjects
     public partial class MonthChoiceForm : Form
     {
         public CalendarForm calendarWindow = null;
-
+        public EmplListForm emplListWindow = null;
         
         public MonthChoiceForm()
         {
@@ -40,7 +40,6 @@ namespace PlanningFor24hProjects
 
             }
             this.Text = Translation.monthChoiceForm();
-            openCalendarButton.Text = Translation.openCalendarButton();
             saveAndCloseButton.Text = Translation.saveAndCloseButton();
 
         }
@@ -119,13 +118,7 @@ namespace PlanningFor24hProjects
             BaseForm.chosenYear = Int32.Parse(this.yearChoiceComboBox.Text);
         }
 
-        private void openCalendarButton_Click(object sender, EventArgs e)
-        {
-            calendarWindow = new CalendarForm(BaseForm.chosenYear, BaseForm.chosenMonth); // wartosci wybrane z kalendarza
-            calendarWindow.Visible = true;
-            this.Close();
-            //this.Dispose(); //mialo sluzyc wyzerowaniu obiektu, zeby dalo sie sprawdzic czy jest null zeby nie bylo dwoch otwartych okien naraz
-        }
+ 
 
 
 

@@ -43,7 +43,6 @@
             this.yearChoiceComboBox = new System.Windows.Forms.ComboBox();
             this.saveAndCloseButton = new System.Windows.Forms.Button();
             this.monthChoiceGroupBox = new System.Windows.Forms.GroupBox();
-            this.openCalendarButton = new System.Windows.Forms.Button();
             this.yearChoiceLabel = new System.Windows.Forms.Label();
             this.monthChoiceGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -181,7 +180,7 @@
             // 
             this.saveAndCloseButton.Location = new System.Drawing.Point(35, 236);
             this.saveAndCloseButton.Name = "saveAndCloseButton";
-            this.saveAndCloseButton.Size = new System.Drawing.Size(218, 36);
+            this.saveAndCloseButton.Size = new System.Drawing.Size(442, 36);
             this.saveAndCloseButton.TabIndex = 13;
             this.saveAndCloseButton.Text = "Save and close";
             this.saveAndCloseButton.UseVisualStyleBackColor = true;
@@ -208,16 +207,6 @@
             this.monthChoiceGroupBox.TabStop = false;
             this.monthChoiceGroupBox.Text = "Month";
             // 
-            // openCalendarButton
-            // 
-            this.openCalendarButton.Location = new System.Drawing.Point(259, 236);
-            this.openCalendarButton.Name = "openCalendarButton";
-            this.openCalendarButton.Size = new System.Drawing.Size(218, 36);
-            this.openCalendarButton.TabIndex = 15;
-            this.openCalendarButton.Text = "Load calendar";
-            this.openCalendarButton.UseVisualStyleBackColor = true;
-            this.openCalendarButton.Click += new System.EventHandler(this.openCalendarButton_Click);
-            // 
             // yearChoiceLabel
             // 
             this.yearChoiceLabel.AutoSize = true;
@@ -233,7 +222,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(508, 284);
             this.Controls.Add(this.yearChoiceLabel);
-            this.Controls.Add(this.openCalendarButton);
             this.Controls.Add(this.monthChoiceGroupBox);
             this.Controls.Add(this.saveAndCloseButton);
             this.Controls.Add(this.yearChoiceComboBox);
@@ -263,7 +251,6 @@
         private System.Windows.Forms.ComboBox yearChoiceComboBox;
         private System.Windows.Forms.Button saveAndCloseButton;
         private System.Windows.Forms.GroupBox monthChoiceGroupBox;
-        private System.Windows.Forms.Button openCalendarButton;
         private System.Windows.Forms.Label yearChoiceLabel;
 
 

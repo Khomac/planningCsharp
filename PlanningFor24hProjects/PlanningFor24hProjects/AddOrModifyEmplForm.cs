@@ -22,8 +22,8 @@ namespace PlanningFor24hProjects
 
         private void saveAndExitButton_Click(object sender, EventArgs e) 
         {
-            ListViewItem emplListViewItem = new ListViewItem();
-            emplListViewItem.SubItems.Add(NameAndSurnameTextBox.Text.ToString());
+            ListViewItem emplListViewItem = new ListViewItem(NameAndSurnameTextBox.Text.ToString()); //dodanie itemow z trescia textu
+            //emplListViewItem.SubItems.Add(NameAndSurnameTextBox.Text.ToString()); //do dodawania subitemow
             emplListForm.addItemToEmplListView(emplListViewItem);
             this.Close();
         }

@@ -8,16 +8,18 @@ namespace PlanningFor24hProjects
     public partial class CalendarForm : Form
     {
         ListViewItem calendarItem = null;
-        
+        EmplListForm emplListWindow = null; // zadeklarowanie zmeinnej na przyjecie obiektu emplListWindow
         
 
         private bool listViewMouseDown = true;
         private int year, month = 0;
+        
 
-        public CalendarForm(int year, int month)
+        public CalendarForm(int year, int month, EmplListForm emplListWindow) //przekazanie przez parametr obiektu emplListWindow (tego naszego pierwotnego)
         {
             this.year = year;
-            this.month = month;            
+            this.month = month;
+            this.emplListWindow = emplListWindow;
             InitializeComponent();
         }
 
@@ -51,9 +53,10 @@ namespace PlanningFor24hProjects
                 calendarListView.Columns[j].Width = 23;
             }
 
-            for (int i = 0; i < 10;i++ ) //petla na zaludnienie kalendarza - tymczasowo by default, pozniej bedzie wykorzystywac elementy z emplListForm
+            //for (int i = 0; i < 10;i++ ) //petla na zaludnienie kalendarza - tymczasowo by default, pozniej bedzie wykorzystywac elementy z emplListForm
+            foreach (ListViewItem item in emplListWindow.getListView().Items)
             {
-                calendarItem = new ListViewItem(EmplListForm.emplListViewItem.SubItems[i].Text);
+                calendarItem = new ListViewItem(item.Text);
                 for (int j = 0; j < DateTime.DaysInMonth(year, month); j++)
                 {
                     calendarItem.SubItems.Add("");

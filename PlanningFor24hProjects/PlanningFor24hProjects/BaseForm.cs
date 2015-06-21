@@ -40,7 +40,8 @@ namespace PlanningFor24hProjects
 
         private void openCalendarButton_Click(object sender, EventArgs e)
         {
-            calendarWindow = new CalendarForm(chosenYear, chosenMonth); // wartosci wybrane wczesniej z kalendarza albo domyslne
+            calendarWindow = new CalendarForm(chosenYear, chosenMonth, emplListWindow); // wartosci wybrane wczesniej z kalendarza albo domyslne
+            //wkladamy je do parametru, zeby trafila do calendarWindow wykorzystujac posrednictwo BaseForm (ma dostep do obu form)
             calendarWindow.Visible = true;
         }
 
@@ -83,7 +84,7 @@ namespace PlanningFor24hProjects
         private void modifyEmplListButton_Click(object sender, EventArgs e) //otwarcie okna wyboru pracownikow (opracowac metode na tylko jedno okienko otwarte naraz)
         {
             if(emplListWindow == null)
-                emplListWindow = new EmplListForm();
+                emplListWindow = new EmplListForm(); //http://stackoverflow.com/questions/2021681/hide-form-instead-of-closing-when-close-button-clicked
             emplListWindow.Visible = true;
         }
 

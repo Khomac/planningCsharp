@@ -53,7 +53,7 @@ namespace PlanningFor24hProjects
 
             for (int i = 0; i < 10;i++ ) //petla na zaludnienie kalendarza - tymczasowo by default, pozniej bedzie wykorzystywac elementy z emplListForm
             {
-                calendarItem = new ListViewItem("Imie i Nazwisko");
+                calendarItem = new ListViewItem(EmplListForm.emplListViewItem.SubItems[i].Text);
                 for (int j = 0; j < DateTime.DaysInMonth(year, month); j++)
                 {
                     calendarItem.SubItems.Add("");

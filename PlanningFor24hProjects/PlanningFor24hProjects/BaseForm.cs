@@ -82,7 +82,8 @@ namespace PlanningFor24hProjects
 
         private void modifyEmplListButton_Click(object sender, EventArgs e) //otwarcie okna wyboru pracownikow (opracowac metode na tylko jedno okienko otwarte naraz)
         {
-            emplListWindow = new EmplListForm();
+            if(emplListWindow == null)
+                emplListWindow = new EmplListForm();
             emplListWindow.Visible = true;
         }
 

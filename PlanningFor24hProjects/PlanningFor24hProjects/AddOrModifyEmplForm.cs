@@ -12,16 +12,19 @@ namespace PlanningFor24hProjects
 {
     public partial class AddOrModifyEmplForm : Form
     {
-        public AddOrModifyEmplForm()
+        EmplListForm emplListForm = null;
+
+        public AddOrModifyEmplForm(EmplListForm emplListForm)
         {
             InitializeComponent();
+            this.emplListForm = emplListForm;
         }
 
         private void saveAndExitButton_Click(object sender, EventArgs e) 
         {
-            EmplListForm.emplListViewItem = new ListViewItem();
-            EmplListForm.emplListViewItem.SubItems.Add("pierwszeimie"/*surnameTextBox.Text.ToString()*/);
-            //EmplListForm.emplListView.Items.Add(emplListViewItem); //a to nie dziala
+            ListViewItem emplListViewItem = new ListViewItem();
+            emplListViewItem.SubItems.Add(NameAndSurnameTextBox.Text.ToString());
+            emplListForm.addItemToEmplListView(emplListViewItem);
             this.Close();
         }
     }

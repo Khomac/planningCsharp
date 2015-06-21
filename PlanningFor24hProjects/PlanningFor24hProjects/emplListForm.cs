@@ -44,18 +44,18 @@ namespace PlanningFor24hProjects
 
         private void addEmplButton_Click(object sender, EventArgs e)
         {
-            addOrModifyEmplWindow = new AddOrModifyEmplForm();
+            addOrModifyEmplWindow = new AddOrModifyEmplForm(this); //zaznaczenie ze argumenty maja byc przekazywane do tej metody z addOrModifyEmplWindow
             addOrModifyEmplWindow.Visible = true;
         }
 
         private void saveAndCloseButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Visible = false;
         }
 
-        public void addItemToEmplListView() //tego nie umiem wwywolac
+        public void addItemToEmplListView(ListViewItem itemToAdd)
         {
-            emplListView.Items.Add(emplListViewItem);
+            emplListView.Items.Add(itemToAdd);
             
         }
 

@@ -60,12 +60,12 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Surname";
-            this.columnHeader1.Width = 126;
+            this.columnHeader1.Width = 0;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Name";
-            this.columnHeader2.Width = 130;
+            this.columnHeader2.Width = 196;
             // 
             // columnHeader3
             // 
